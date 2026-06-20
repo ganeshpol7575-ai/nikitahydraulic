@@ -1,160 +1,204 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NIKITA HYDRAULIC</title>
 
 <style>
-body{
+
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial,sans-serif;
-background:#111827;
+}
+
+body{
+background:#0f1117;
 color:white;
 }
 
-.header{
-background:#0f172a;
-padding:60px 20px;
+header{
+background:linear-gradient(135deg,#111,#1b1b1b);
+padding:40px 20px;
 text-align:center;
 }
 
-.header h1{
-font-size:55px;
-color:#facc15;
-margin:0;
+.logo{
+width:140px;
+height:140px;
+object-fit:contain;
+margin-bottom:20px;
 }
 
-.header p{
-font-size:22px;
+h1{
+font-size:3rem;
+color:#f7c948;
+}
+
+.tagline{
+margin-top:10px;
+font-size:1.2rem;
+color:#ccc;
 }
 
 .btn{
 display:inline-block;
-background:#22c55e;
+margin-top:20px;
+padding:14px 30px;
+background:#25D366;
 color:white;
-padding:12px 25px;
 text-decoration:none;
 border-radius:8px;
-margin-top:15px;
+font-weight:bold;
 }
 
-.container{
-width:90%;
+section{
+padding:60px 20px;
+max-width:1200px;
 margin:auto;
-padding:20px;
 }
 
-.box{
-background:#1f2937;
-padding:25px;
-margin:20px 0;
-border-radius:12px;
-box-shadow:0 0 10px rgba(0,0,0,0.5);
+.section-title{
+text-align:center;
+font-size:2rem;
+margin-bottom:40px;
+color:#f7c948;
 }
 
-h2{
-color:#facc15;
+.about{
+text-align:center;
+line-height:1.8;
+font-size:18px;
+color:#ddd;
 }
 
 .gallery{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
 }
 
 .gallery img{
-width:280px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.5);
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:15px;
+border:2px solid #222;
+transition:.3s;
 }
 
-.footer{
-background:#000;
-text-align:center;
-padding:20px;
-margin-top:30px;
+.gallery img:hover{
+transform:scale(1.05);
 }
+
+.contact{
+text-align:center;
+line-height:2;
+font-size:18px;
+}
+
+.contact a{
+color:#25D366;
+text-decoration:none;
+}
+
+footer{
+background:#111;
+padding:20px;
+text-align:center;
+color:#999;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="header">
-<h1>NIKITA HYDRAULIC</h1>
-<p>Rubber Moulding & Hydraulic Solutions</p>
+<header>
 
-<a class="btn" href="https://wa.me/918149002309">
+<img src="logo.png" class="logo">
+
+<h1>NIKITA HYDRAULIC</h1>
+
+<p class="tagline">
+Rubber Moulding, Hydraulic Seals, O-Rings, Gaskets & Custom Rubber Parts
+</p>
+
+<a href="https://wa.me/918149002309" class="btn">
 WhatsApp Now
 </a>
-</div>
 
-<div class="container">
+</header>
 
-<div class="box">
-<h2>About Us</h2>
-<p>
-NIKITA HYDRAULIC is a leading manufacturer and supplier of
-Custom Rubber Moulded Parts, Silicone Gaskets,
-Rubber Seals, O-Rings, Rubber Bushes,
-Industrial Rubber Components and Hydraulic Solutions.
+<section>
+
+<h2 class="section-title">About Us</h2>
+
+<p class="about">
+We manufacture high-quality Rubber Parts, Hydraulic Seals,
+Silicone Gaskets, O-Rings, Bushes, Dampers and Custom Molded
+Components as per sample or drawing. We provide durable,
+precision-made solutions for industrial applications.
 </p>
-</div>
 
-<div class="box">
-<h2>Our Services</h2>
+</section>
 
-<p>✓ Custom Rubber Moulding</p>
-<p>✓ Rubber Gasket Manufacturer</p>
-<p>✓ Silicone Rubber Products</p>
-<p>✓ O-Rings Manufacturing</p>
-<p>✓ Rubber Bushes</p>
-<p>✓ Automotive Rubber Parts</p>
-<p>✓ Industrial Rubber Components</p>
-<p>✓ Hydraulic Hoses</p>
-<p>✓ Hydraulic Services</p>
-</div>
+<section>
 
-<div class="box">
-<h2>Product Gallery</h2>
+<h2 class="section-title">Our Products</h2>
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1581092919535-7146ff1a5909">
-<img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7">
-<img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952">
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd">
+<img src="p1.jpg">
+<img src="p2.jpg">
+<img src="p3.jpg">
+<img src="p4.jpg">
+<img src="p5.jpg">
+<img src="p6.jpg">
 
 </div>
 
+</section>
+
+<section>
+
+<h2 class="section-title">Contact Us</h2>
+
+<div class="contact">
+
+<p>📞 Mobile: 8149002309</p>
+
+<p>📧 Email: nikitahydraulic5@gmail.com</p>
+
+<p>
+📍 Shantinagar Near Vitthal Mandir,
+Opp Om Medical, Bhosari 411026
+</p>
+
+<p>
+📸 Instagram:
+<a href="https://www.instagram.com/nikitahydraulic?igsh=ZTdmMHY0aTF6b3ht">
+Follow Us
+</a>
+</p>
+
+<p>
+<a href="https://maps.google.com">
+Open Location
+</a>
+</p>
+
 </div>
 
-<div class="box">
-<h2>Contact Us</h2>
+</section>
 
-<p>📞 Mobile : +91 8149002309</p>
-<p>💬 WhatsApp : +91 8149002309</p>
-<p>📧 Email : nikitahydraulic5@gmail.com</p>
-<p>📍 Address : Shantinagar Near Vitthal Mandir, Opp Om Medical, Bhosari, Pune - 411026</p>
+<footer>
 
-</div>
-
-<div class="box">
-<h2>Google Map</h2>
-
-<iframe
-src="https://maps.google.com/maps?q=bhosari%20pune&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="350"
-style="border:0;border-radius:10px;">
-</iframe>
-
-</div>
-
-</div>
-
-<div class="footer">
 © 2026 NIKITA HYDRAULIC | All Rights Reserved
-</div>
+
+</footer>
 
 </body>
 </html>
