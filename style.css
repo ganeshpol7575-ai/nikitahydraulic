@@ -1,1 +1,571 @@
+/* ===================================
+   NIKITA HYDRAULIC
+   PREMIUM UI V3
+   PART 1
+=================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+--bg:#050505;
+--bg2:#101010;
+--red:#e30613;
+--white:#ffffff;
+--gray:#a7a7a7;
+--border:rgba(255,255,255,.08);
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--bg);
+color:white;
+overflow-x:hidden;
+
+}
+
+/* =====================
+Background
+===================== */
+
+.bg-grid{
+
+position:fixed;
+
+inset:0;
+
+background:
+
+linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+
+linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+
+background-size:60px 60px;
+
+z-index:-3;
+
+}
+
+.mouse-light{
+
+position:fixed;
+
+width:350px;
+
+height:350px;
+
+border-radius:50%;
+
+background:radial-gradient(circle,
+rgba(227,6,19,.18),
+transparent 70%);
+
+pointer-events:none;
+
+left:0;
+
+top:0;
+
+transform:translate(-50%,-50%);
+
+z-index:-2;
+
+filter:blur(10px);
+
+}
+
+/* =====================
+Header
+===================== */
+
+.header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:18px 8%;
+
+backdrop-filter:blur(20px);
+
+background:rgba(5,5,5,.55);
+
+border-bottom:1px solid rgba(255,255,255,.06);
+
+z-index:1000;
+
+}
+
+.container{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+text-decoration:none;
+
+color:white;
+
+}
+
+.logo h2{
+
+font-size:34px;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+}
+
+.logo span{
+
+font-size:13px;
+
+letter-spacing:4px;
+
+color:var(--red);
+
+}
+
+.navbar{
+
+display:flex;
+
+align-items:center;
+
+gap:35px;
+
+}
+
+.navbar a{
+
+color:white;
+
+text-decoration:none;
+
+font-size:15px;
+
+font-weight:500;
+
+transition:.35s;
+
+position:relative;
+
+}
+
+.navbar a::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-8px;
+
+left:0;
+
+width:0;
+
+height:2px;
+
+background:var(--red);
+
+transition:.35s;
+
+}
+
+.navbar a:hover::after{
+
+width:100%;
+
+}
+
+#quoteBtn{
+
+padding:14px 30px;
+
+background:var(--red);
+
+border:none;
+
+color:white;
+
+border-radius:50px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+#quoteBtn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 15px 35px rgba(227,6,19,.35);
+
+}
+
+/* =====================
+Hero
+===================== */
+
+.hero{
+
+min-height:100vh;
+
+display:grid;
+
+grid-template-columns:1.2fr .8fr;
+
+align-items:center;
+
+padding:120px 8%;
+
+gap:70px;
+
+}
+
+.hero-tag{
+
+display:inline-block;
+
+padding:10px 20px;
+
+border:1px solid rgba(227,6,19,.35);
+
+border-radius:50px;
+
+color:#ff8088;
+
+margin-bottom:25px;
+
+}
+
+.hero h1{
+
+font-size:82px;
+
+font-weight:800;
+
+line-height:0.95;
+
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+color:var(--gray);
+
+line-height:1.9;
+
+max-width:620px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:18px;
+
+margin-top:40px;
+
+}
+
+.primary-btn{
+
+background:var(--red);
+
+padding:16px 36px;
+
+border:none;
+
+border-radius:50px;
+
+color:white;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.secondary-btn{
+
+padding:16px 36px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+border:1px solid rgba(255,255,255,.12);
+
+transition:.35s;
+
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+
+transform:translateY(-6px);
+
+}
+
+/* =====================
+Glass Card
+===================== */
+
+.hero-card{
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(18px);
+
+border:1px solid var(--border);
+
+padding:35px;
+
+border-radius:24px;
+
+}
+
+.card-top{
+
+margin-bottom:25px;
+
+}
+
+.card-top h3{
+
+font-size:28px;
+
+}
+
+.feature{
+
+display:flex;
+
+gap:14px;
+
+align-items:center;
+
+padding:18px 0;
+
+border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.feature:last-child{
+
+border:none;
+
+}
+
+.feature i{
+
+color:var(--red);
+
+}
+
+/* =====================
+Popup
+===================== */
+
+.quote-popup{
+
+position:fixed;
+
+inset:0;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(8px);
+
+z-index:9999;
+
+}
+
+.popup-box{
+
+width:min(92%,620px);
+
+background:#111;
+
+padding:40px;
+
+border-radius:24px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.popup-box h2{
+
+margin-bottom:25px;
+
+}
+
+.popup-box form{
+
+display:grid;
+
+gap:16px;
+
+}
+
+.popup-box input,
+.popup-box textarea{
+
+padding:16px;
+
+background:#191919;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:12px;
+
+color:white;
+
+outline:none;
+
+}
+
+.popup-box textarea{
+
+height:140px;
+
+resize:none;
+
+}
+
+.popup-box button[type="submit"]{
+
+background:var(--red);
+
+border:none;
+
+padding:16px;
+
+border-radius:12px;
+
+color:white;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+.close-popup{
+
+position:absolute;
+
+right:25px;
+
+top:18px;
+
+font-size:32px;
+
+background:none;
+
+border:none;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+.popup-box{
+
+position:relative;
+
+}
+
+/* =====================
+Responsive
+===================== */
+
+.mobile-toggle{
+
+display:none;
+
+font-size:28px;
+
+cursor:pointer;
+
+}
+
+@media(max-width:992px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:54px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.navbar{
+
+display:none;
+
+}
+
+.mobile-toggle{
+
+display:block;
+
+}
+
+}
