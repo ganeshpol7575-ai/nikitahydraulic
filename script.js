@@ -1,324 +1,152 @@
-/* ==========================================
-   NIKITA HYDRAULIC
-   PREMIUM WEBSITE
-   SCRIPT PART 1
-========================================== */
+/*==========================================
+NIKITA HYDRAULIC
+Premium JavaScript
+==========================================*/
 
-// ===============================
-// Cursor Glow
-// ===============================
+/* Sticky Navbar */
 
-const glow = document.querySelector(".cursor-glow");
+window.addEventListener("scroll",function(){
 
-document.addEventListener("mousemove", (e) => {
+const header=document.querySelector("header");
 
-    if(glow){
+if(window.scrollY>80){
 
-        glow.style.left = e.clientX + "px";
-        glow.style.top = e.clientY + "px";
+header.style.background="rgba(255,255,255,.97)";
+header.style.boxShadow="0 10px 30px rgba(0,0,0,.08)";
 
-    }
+}else{
 
-});
+header.style.background="rgba(255,255,255,.90)";
+header.style.boxShadow="none";
 
-// ===============================
-// Header Scroll Effect
-// ===============================
-
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 50){
-
-        header.style.background = "rgba(7,7,7,.92)";
-        header.style.boxShadow = "0 15px 35px rgba(0,0,0,.40)";
-
-    }else{
-
-        header.style.background = "rgba(7,7,7,.65)";
-        header.style.boxShadow = "none";
-
-    }
+}
 
 });
 
-// ===============================
-// Smooth Scroll
-// ===============================
 
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
+/* Smooth Scroll */
 
-    link.addEventListener("click",function(e){
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
-        e.preventDefault();
-
-        const target=document.querySelector(this.getAttribute("href"));
-
-        if(target){
-
-            target.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-        }
-
-    });
-
-});
-
-// ===============================
-// Reveal Animation
-// ===============================
-
-const revealElements = document.querySelectorAll(
-".about-card,.product-card,.why-card,.industry-card,.stat-card,.process-card,.info-box"
-);
-
-const reveal = () => {
-
-    revealElements.forEach((item)=>{
-
-        const top = item.getBoundingClientRect().top;
-
-        if(top < window.innerHeight-100){
-
-            item.style.opacity="1";
-            item.style.transform="translateY(0)";
-
-        }
-
-    });
-
-};
-
-reveal();
-
-window.addEventListener("scroll",reveal);
-
-// Initial Style
-
-revealElements.forEach(item=>{
-
-    item.style.opacity="0";
-    item.style.transform="translateY(40px)";
-    item.style.transition=".7s ease";
-
-});
-
-// ===============================
-// Contact Form
-// ===============================
-
-const form=document.getElementById("contactForm");
-
-if(form){
-
-form.addEventListener("submit",(e)=>{
+anchor.addEventListener("click",function(e){
 
 e.preventDefault();
 
-alert(
-"Thank You!\n\nYour enquiry has been received.\nOur team will contact you shortly."
-);
+document.querySelector(this.getAttribute("href"))
+.scrollIntoView({
 
-form.reset();
+behavior:"smooth"
 
 });
 
-}
-/* ==========================================
-   NIKITA HYDRAULIC
-   SCRIPT PART 2
-========================================== */
-
-// ===============================
-// Active Navigation
-// ===============================
-
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 120;
-
-        if (window.scrollY >= sectionTop) {
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-
-            link.classList.add("active");
-
-        }
-
-    });
+});
 
 });
 
 
-// ===============================
-// Mobile Menu
-// ===============================
+/* Fade Animation */
 
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector("nav");
+const observer=new IntersectionObserver(entries=>{
 
-if(menuBtn){
+entries.forEach(entry=>{
 
-menuBtn.addEventListener("click",()=>{
+if(entry.isIntersecting){
 
-nav.classList.toggle("show");
+entry.target.style.opacity="1";
 
-});
+entry.target.style.transform="translateY(0)";
 
 }
 
-
-// ===============================
-// Floating Animation
-// ===============================
-
-const cards = document.querySelectorAll(".hero-card");
-
-cards.forEach(card=>{
-
-card.addEventListener("mouseenter",()=>{
-
-card.style.transform="translateY(-12px)";
-
 });
 
-card.addEventListener("mouseleave",()=>{
+},{threshold:.15});
 
-card.style.transform="translateY(0px)";
 
-});
+document.querySelectorAll(
+".why-card,.product-card,.industry-card,.step,.faq-box,.trust-box,.contact-card"
+).forEach(el=>{
+
+el.style.opacity="0";
+el.style.transform="translateY(60px)";
+el.style.transition=".8s";
+
+observer.observe(el);
 
 });
 
 
-// ===============================
-// Button Ripple Effect
-// ===============================
+/* Counter */
 
-document.querySelectorAll("button").forEach(btn=>{
+const counters=document.querySelectorAll(".stat-box h2");
 
-btn.addEventListener("click",function(e){
+counters.forEach(counter=>{
 
-const ripple=document.createElement("span");
+const update=()=>{
 
-const rect=this.getBoundingClientRect();
+const target=parseInt(counter.innerText);
 
-ripple.style.left=(e.clientX-rect.left)+"px";
+let count=0;
 
-ripple.style.top=(e.clientY-rect.top)+"px";
+const speed=40;
 
-ripple.className="ripple";
+const timer=setInterval(()=>{
 
-this.appendChild(ripple);
+count++;
 
-setTimeout(()=>{
+counter.innerText=count+"+";
 
-ripple.remove();
+if(count>=target){
 
-},600);
+counter.innerText=target+"+";
 
-});
-
-});
-
-
-// ===============================
-// Contact Form → WhatsApp
-// ===============================
-
-const contactForm=document.getElementById("contactForm");
-
-if(contactForm){
-
-contactForm.addEventListener("submit",function(e){
-
-e.preventDefault();
-
-const data=this.querySelectorAll("input,textarea");
-
-const name=data[0].value;
-const company=data[1].value;
-const mobile=data[2].value;
-const email=data[3].value;
-const product=data[4].value;
-const req=data[5].value;
-
-const msg=
-
-`*NEW ENQUIRY*
-
-Name : ${name}
-
-Company : ${company}
-
-Mobile : ${mobile}
-
-Email : ${email}
-
-Product : ${product}
-
-Requirement :
-
-${req}`;
-
-window.open(
-
-`https://wa.me/918149002309?text=${encodeURIComponent(msg)}`,
-
-"_blank"
-
-);
-
-this.reset();
-
-});
+clearInterval(timer);
 
 }
 
-
-// ===============================
-// Footer Year
-// ===============================
-
-const year=document.querySelector(".footer-copy");
-
-if(year){
-
-year.innerHTML=
-
-`© ${new Date().getFullYear()} NIKITA HYDRAULIC. All Rights Reserved.`;
+},speed);
 
 }
 
+update();
 
-// ===============================
-// Console Message
-// ===============================
+});
 
-console.log(
 
-"NIKITA HYDRAULIC WEBSITE LOADED SUCCESSFULLY"
+/* Floating Button */
 
-);
+const whatsapp=document.querySelector(".whatsapp");
+
+setInterval(()=>{
+
+whatsapp.animate([
+
+{
+
+transform:"scale(1)"
+
+},
+
+{
+
+transform:"scale(1.12)"
+
+},
+
+{
+
+transform:"scale(1)"
+
+}
+
+],{
+
+duration:1200
+
+});
+
+},2500);
+
+
+
+console.log("Nikita Hydraulic Website Loaded Successfully");
