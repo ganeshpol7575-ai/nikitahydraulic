@@ -1,0 +1,31 @@
+{
+
+"name":"Nikita Hydraulic",
+
+"short_name":"Nikita",
+
+"start_url":"/",
+
+"display":"standalone",
+
+"background_color":"#ffffff",
+
+"theme_color":"#3ba7ff",
+
+"description":"Custom Rubber Manufacturer",
+
+"icons":[
+
+{
+
+"src":"logo.png",
+
+"sizes":"512x512",
+
+"type":"image/png"
+
+}
+
+]
+
+}
