@@ -6,21 +6,26 @@
 <meta name="theme-color" content="#0b1729" />
 <title>Nikita Hydraulic — Rubber Moulding Manufacturer | Bhosari MIDC, Pune</title>
 <meta name="description" content="Nikita Hydraulic — Rubber Moulding Manufacturer of O-rings, gaskets, oil seals, rubber washers, grommets & custom rubber parts. Bhosari MIDC, Pune. 24×7." />
+
 <link rel="icon" type="image/png" href="logo.png" />
 <link rel="apple-touch-icon" href="logo.png" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+/* ============================================================
+   TOKENS
+============================================================ */
 :root{
   --ink:#070d18;--navy:#0b1729;--navy-3:#152c46;
   --accent:#ff6a1a;--accent-soft:rgba(255,106,26,.12);--accent-glow:rgba(255,106,26,.35);
   --paper:#fbfbfd;--paper-2:#f4f5f8;
   --t-1:#0b1729;--t-2:#4a5567;--t-3:#8892a4;
   --line-dark:rgba(11,23,41,.08);
-  --f-display:'Sora','Noto Sans Devanagari',system-ui,-apple-system,sans-serif;
-  --f-body:'Inter','Noto Sans Devanagari',system-ui,-apple-system,sans-serif;
+  --f-display:'Sora',system-ui,-apple-system,sans-serif;
+  --f-body:'Inter',system-ui,-apple-system,sans-serif;
   --f-mono:'JetBrains Mono',monospace;
   --r-lg:20px;--r-xl:28px;--r-pill:999px;
   --sh-sm:0 1px 2px rgba(11,23,41,.06),0 2px 6px rgba(11,23,41,.05);
@@ -30,9 +35,18 @@
   --vh:100vh;
 }
 @supports (height:100dvh){:root{--vh:100dvh}}
+
+/* ============================================================
+   RESET & BASE
+============================================================ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
-body{font-family:var(--f-body);background:var(--paper);color:var(--t-1);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;width:100%;position:relative}
+body{
+  font-family:var(--f-body);background:var(--paper);color:var(--t-1);
+  line-height:1.6;font-size:16px;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;width:100%;position:relative;
+}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;border:none;background:none;cursor:pointer;color:inherit}
@@ -45,6 +59,9 @@ ul{list-style:none}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 .wrap{width:100%;max-width:1280px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
 
+/* ============================================================
+   LOADER
+============================================================ */
 #loader{position:fixed;inset:0;z-index:9999;background:var(--ink);display:grid;place-items:center;transition:opacity .7s var(--ease),visibility .7s}
 #loader.done{opacity:0;visibility:hidden;pointer-events:none}
 .load-mark{display:flex;flex-direction:column;align-items:center;gap:16px}
@@ -56,11 +73,22 @@ ul{list-style:none}
 .load-dots span:nth-child(3){animation-delay:.3s}
 @keyframes loadDot{0%,80%,100%{transform:scale(.5);opacity:.3}40%{transform:scale(1);opacity:1}}
 
+/* ============================================================
+   NAV
+============================================================ */
 .nav-wrap{position:fixed;top:0;left:0;right:0;z-index:1000;padding:14px 0;transition:padding .35s var(--ease),background .35s var(--ease),backdrop-filter .35s}
-.nav-wrap.scrolled{padding:8px 0;background:rgba(11,23,41,.82);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(255,255,255,.06)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.nav-wrap.scrolled{padding:8px 0;background:rgba(11,23,41,.78);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;align-items:center;gap:12px;min-width:0;flex-shrink:1}
-.brand-mark{width:clamp(40px,10vw,50px);height:clamp(40px,10vw,50px);border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.10),rgba(255,255,255,.02));display:grid;place-items:center;box-shadow:0 4px 18px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.1),inset 0 1px 0 rgba(255,255,255,.15);overflow:hidden;padding:3px;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.brand-mark{
+  width:clamp(40px,10vw,50px);height:clamp(40px,10vw,50px);
+  border-radius:50%;flex-shrink:0;
+  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.10),rgba(255,255,255,.02));
+  display:grid;place-items:center;
+  box-shadow:0 4px 18px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.1),inset 0 1px 0 rgba(255,255,255,.15);
+  overflow:hidden;padding:3px;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+}
 .brand-mark img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
 .brand:hover .brand-mark{transform:scale(1.06) rotate(-3deg);box-shadow:0 8px 26px rgba(255,106,26,.4),0 0 0 1px rgba(255,106,26,.5),inset 0 1px 0 rgba(255,255,255,.18)}
 .brand-txt{min-width:0}
@@ -71,28 +99,10 @@ ul{list-style:none}
 .menu a{padding:9px 14px;font-size:14px;font-weight:500;color:rgba(255,255,255,.72);border-radius:var(--r-pill);transition:all .25s var(--ease);white-space:nowrap}
 .menu a:hover{color:#fff;background:rgba(255,255,255,.06)}
 .menu a.active{color:#fff;background:rgba(255,255,255,.1)}
-.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:var(--r-pill);background:#fff;color:var(--ink);font-weight:600;font-size:14px;transition:all .3s var(--ease);white-space:nowrap}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:var(--r-pill);background:#fff;color:var(--ink);font-weight:600;font-size:14px;transition:all .3s var(--ease);white-space:nowrap;flex-shrink:0}
 .nav-cta:hover{background:var(--accent);color:#fff;box-shadow:0 8px 30px var(--accent-glow)}
 .nav-cta svg{width:14px;height:14px;transition:transform .3s var(--ease)}
 .nav-cta:hover svg{transform:translateX(3px)}
-
-.lang-switch{position:relative}
-.lang-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border-radius:var(--r-pill);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:13px;font-weight:600;transition:all .25s var(--ease);white-space:nowrap}
-.lang-btn:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.28)}
-.lang-btn .globe{width:14px;height:14px;flex-shrink:0}
-.lang-btn .chev{width:10px;height:10px;transition:transform .3s var(--ease);flex-shrink:0;opacity:.7}
-.lang-switch.open .lang-btn{background:var(--accent);border-color:var(--accent)}
-.lang-switch.open .lang-btn .chev{transform:rotate(180deg)}
-.lang-label{display:inline-block;min-width:22px;text-align:center;font-family:var(--f-mono);letter-spacing:.03em}
-.lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:#fff;border-radius:14px;padding:6px;box-shadow:0 12px 40px rgba(0,0,0,.18),0 0 0 1px rgba(11,23,41,.06);min-width:170px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .25s var(--ease);z-index:1100}
-.lang-switch.open .lang-menu{opacity:1;visibility:visible;transform:none}
-.lang-menu button{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:11px 14px;text-align:left;font-size:14px;color:var(--navy);border-radius:10px;transition:background .2s;font-weight:500;font-family:var(--f-body)}
-.lang-menu button .check{width:14px;height:14px;opacity:0;color:#fff;flex-shrink:0}
-.lang-menu button:hover{background:var(--paper-2)}
-.lang-menu button.active{background:var(--navy);color:#fff}
-.lang-menu button.active .check{opacity:1}
-
 .burger{display:none;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);position:relative;flex-shrink:0}
 .burger span{position:absolute;left:11px;width:18px;height:1.8px;background:#fff;border-radius:2px;transition:.35s var(--ease)}
 .burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:19px}.burger span:nth-child(3){top:24px}
@@ -100,28 +110,64 @@ ul{list-style:none}
 .burger.on span:nth-child(2){opacity:0}
 .burger.on span:nth-child(3){top:19px;transform:rotate(-45deg)}
 
-.drawer{position:fixed;top:0;right:0;bottom:0;width:min(340px,88vw);max-width:100%;z-index:999;background:var(--navy);padding:90px 26px 34px;transform:translateX(100%);transition:transform .45s var(--ease);display:flex;flex-direction:column;gap:2px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;
+  width:min(340px,88vw);max-width:100%;
+  z-index:999;background:var(--navy);
+  padding:90px 26px 34px;
+  transform:translateX(100%);transition:transform .45s var(--ease);
+  display:flex;flex-direction:column;gap:2px;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+}
 .drawer.open{transform:none}
-.drawer > a{padding:15px 0;color:rgba(255,255,255,.78);font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.07);transition:color .25s}
-.drawer > a:hover{color:var(--accent)}
-.drawer .drawer-lang{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
-.drawer .drawer-lang button{padding:9px 16px;border-radius:var(--r-pill);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.75);font-size:13px;font-weight:500;transition:all .25s}
-.drawer .drawer-lang button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.drawer .drawer-cta{margin-top:20px;padding:15px;border-radius:var(--r-pill);text-align:center;background:var(--accent);color:#fff;font-weight:600;border:none}
+.drawer a{padding:15px 0;color:rgba(255,255,255,.78);font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.07);transition:color .25s}
+.drawer a:hover,.drawer a:active{color:var(--accent)}
+.drawer .drawer-cta{margin-top:22px;padding:15px;border-radius:var(--r-pill);text-align:center;background:var(--accent);color:#fff;font-weight:600;border:none}
 
-.hero{position:relative;min-height:var(--vh);display:flex;align-items:center;background:var(--ink);overflow:hidden;padding:calc(80px + env(safe-area-inset-top)) 0 60px;isolation:isolate}
+/* ============================================================
+   HERO
+============================================================ */
+.hero{
+  position:relative;min-height:var(--vh);
+  display:flex;align-items:center;
+  background:var(--ink);overflow:hidden;
+  padding:calc(80px + env(safe-area-inset-top)) 0 60px;
+  isolation:isolate;
+}
 .hero-bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
-.hero-bg::before{content:"";position:absolute;inset:-30%;background:radial-gradient(700px 600px at 15% 20%,rgba(255,106,26,.28),transparent 55%),radial-gradient(800px 700px at 85% 70%,rgba(30,90,180,.32),transparent 60%),radial-gradient(600px 500px at 60% 10%,rgba(120,60,220,.16),transparent 60%),linear-gradient(180deg,#05080f 0%,#070d18 100%);animation:heroDrift 22s ease-in-out infinite alternate;filter:blur(6px)}
+.hero-bg::before{
+  content:"";position:absolute;inset:-30%;
+  background:
+    radial-gradient(700px 600px at 15% 20%,rgba(255,106,26,.28),transparent 55%),
+    radial-gradient(800px 700px at 85% 70%,rgba(30,90,180,.32),transparent 60%),
+    radial-gradient(600px 500px at 60% 10%,rgba(120,60,220,.16),transparent 60%),
+    linear-gradient(180deg,#05080f 0%,#070d18 100%);
+  animation:heroDrift 22s ease-in-out infinite alternate;filter:blur(6px);
+}
 @keyframes heroDrift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(3%,-2%) scale(1.08)}}
 .hero-bg::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.055) 1px,transparent 1px);background-size:24px 24px;mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 40%,transparent 100%)}
+
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,64px);align-items:center;width:100%}
+
 .chip{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:var(--r-pill);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.85);font-size:clamp(11px,2.8vw,12.5px);font-weight:500;backdrop-filter:blur(10px);max-width:100%}
 .chip .live{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:live 2s infinite;flex-shrink:0}
 @keyframes live{0%,100%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}}
-.hero h1{font-family:var(--f-display);font-size:clamp(1.7rem,7vw,4.3rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;color:#fff;margin:22px 0 18px;max-width:820px;word-break:break-word}
-.hero h1 em{font-style:normal;background:linear-gradient(110deg,#ff8c42 0%,#ff6a1a 45%,#ffa76a 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.hero h1{
+  font-family:var(--f-display);
+  font-size:clamp(1.7rem,7vw,4.3rem);
+  font-weight:700;line-height:1.06;letter-spacing:-.035em;
+  color:#fff;margin:22px 0 18px;max-width:820px;
+  word-break:break-word;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(110deg,#ff8c42 0%,#ff6a1a 45%,#ffa76a 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
 .hero-sub{font-size:clamp(14.5px,3.6vw,17.5px);color:rgba(255,255,255,.68);max-width:580px;line-height:1.65;margin-bottom:32px}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 24px;border-radius:var(--r-pill);font-weight:600;font-size:clamp(13.5px,3.4vw,15px);transition:all .3s var(--ease);position:relative;overflow:hidden;white-space:nowrap;max-width:100%}
 .btn svg{width:16px;height:16px;transition:transform .3s var(--ease);flex-shrink:0}
 .btn:hover svg{transform:translateX(3px)}
@@ -129,11 +175,14 @@ ul{list-style:none}
 .btn-primary::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);transform:translateX(-100%);transition:transform .7s var(--ease)}
 .btn-primary:hover::before{transform:translateX(100%)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(255,106,26,.5)}
+.btn-primary:active{transform:translateY(0)}
 .btn-glass{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(10px)}
 .btn-glass:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);transform:translateY(-2px)}
+
 .hero-mini{display:flex;gap:20px 28px;flex-wrap:wrap}
 .hero-mini div{display:flex;align-items:center;gap:8px;font-size:clamp(12px,3vw,13.5px);color:rgba(255,255,255,.6)}
 .hero-mini svg{width:15px;height:15px;color:var(--accent);flex-shrink:0}
+
 .hero-card{background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:clamp(22px,4vw,32px);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);box-shadow:0 30px 80px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1);position:relative;overflow:hidden;width:100%;max-width:520px}
 .hero-card::before{content:"";position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(255,106,26,.15),transparent 30%);animation:rotate 8s linear infinite;pointer-events:none}
 @keyframes rotate{to{transform:rotate(360deg)}}
@@ -148,11 +197,15 @@ ul{list-style:none}
 .hc-row .v.mono{font-family:var(--f-mono);font-size:12px}
 .hc-cta{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.07)}
 .hc-cta .btn{width:100%}
+
 .scroll-cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.35);font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500}
 .scroll-cue .bar{width:1px;height:28px;background:linear-gradient(to bottom,rgba(255,255,255,.3),transparent);position:relative;overflow:hidden}
 .scroll-cue .bar::after{content:"";position:absolute;top:0;left:0;width:100%;height:40%;background:var(--accent);animation:scrollBar 2.2s infinite var(--ease)}
 @keyframes scrollBar{0%{top:-40%}100%{top:100%}}
 
+/* ============================================================
+   MARQUEE
+============================================================ */
 .marquee{padding:22px 0;background:var(--navy);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);overflow:hidden}
 .marquee-track{display:flex;gap:clamp(28px,6vw,64px);width:max-content;animation:scroll 34s linear infinite}
 .marquee:hover .marquee-track{animation-play-state:paused}
@@ -160,6 +213,9 @@ ul{list-style:none}
 .marquee-item{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.55);font-family:var(--f-display);font-size:clamp(13px,3vw,15px);font-weight:500;white-space:nowrap}
 .marquee-item::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);flex-shrink:0}
 
+/* ============================================================
+   SECTIONS
+============================================================ */
 .sec{padding:clamp(60px,10vw,120px) 0;position:relative}
 .sec.alt{background:var(--paper-2)}
 .sec.dark{background:var(--navy);color:#fff}
@@ -169,14 +225,19 @@ ul{list-style:none}
 .sec-head.center{margin-inline:auto;text-align:center}
 .tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:clamp(10.5px,2.6vw,11.5px);font-weight:500;color:var(--accent);text-transform:uppercase;letter-spacing:.18em;margin-bottom:16px}
 .tag::before{content:"";width:22px;height:1px;background:var(--accent)}
-.sec-head h2{font-family:var(--f-display);font-size:clamp(1.5rem,5.5vw,3.15rem);font-weight:700;line-height:1.2;letter-spacing:-.03em;color:var(--t-1);margin-bottom:16px}
+.sec-head h2{font-family:var(--f-display);font-size:clamp(1.5rem,5.5vw,3.15rem);font-weight:700;line-height:1.1;letter-spacing:-.035em;color:var(--t-1);margin-bottom:16px}
+.sec-head h2 em{font-style:normal;background:linear-gradient(110deg,var(--accent),#ff8c42);-webkit-background-clip:text;background-clip:text;color:transparent}
 .sec-head p{font-size:clamp(14.5px,3.6vw,17px);color:var(--t-2);line-height:1.65}
 
+/* ============================================================
+   ABOUT
+============================================================ */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
-.about-lead{font-family:var(--f-display);font-size:clamp(17px,4vw,22px);font-weight:500;line-height:1.55;color:var(--t-1);margin-bottom:18px;letter-spacing:-.02em}
+.about-lead{font-family:var(--f-display);font-size:clamp(17px,4vw,22px);font-weight:500;line-height:1.5;color:var(--t-1);margin-bottom:18px;letter-spacing:-.02em}
+.about-lead em{font-style:normal;color:var(--accent);font-weight:600}
 .about-body{font-size:clamp(14.5px,3.6vw,16px);color:var(--t-2);line-height:1.75;margin-bottom:18px}
 .about-points{display:grid;gap:12px;margin:26px 0 30px}
-.about-points li{display:flex;gap:12px;align-items:flex-start;font-size:clamp(14px,3.5vw,15px);color:var(--t-1);line-height:1.6}
+.about-points li{display:flex;gap:12px;align-items:flex-start;font-size:clamp(14px,3.5vw,15px);color:var(--t-1)}
 .about-points .tick{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:11px;font-weight:800;margin-top:2px}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .stat{background:#fff;border:1px solid var(--line-dark);border-radius:var(--r-lg);padding:clamp(20px,4vw,28px) clamp(16px,3.5vw,24px);box-shadow:var(--sh-sm);transition:all .4s var(--ease);position:relative;overflow:hidden}
@@ -188,6 +249,9 @@ ul{list-style:none}
 .stat span{font-size:clamp(12px,3vw,13.5px);color:var(--t-3);font-weight:500;display:block;margin-top:8px}
 .stat:nth-child(2),.stat:nth-child(4){transform:translateY(20px)}
 
+/* ============================================================
+   FILTERS
+============================================================ */
 .filter-wrap{display:flex;justify-content:center;width:100%}
 .filter-bar{display:flex;gap:8px;padding:8px;background:#fff;border-radius:var(--r-pill);border:1px solid var(--line-dark);box-shadow:var(--sh-sm);max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .filter-bar::-webkit-scrollbar{display:none}
@@ -195,6 +259,9 @@ ul{list-style:none}
 .filter-btn:hover{color:var(--t-1);background:var(--paper-2)}
 .filter-btn.active{background:var(--navy);color:#fff;box-shadow:0 4px 12px rgba(11,23,41,.18)}
 
+/* ============================================================
+   PRODUCTS
+============================================================ */
 .grid-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:clamp(16px,3.5vw,24px);margin-top:clamp(32px,6vw,48px)}
 .product{background:#fff;border:1px solid var(--line-dark);border-radius:var(--r-lg);transition:all .5s var(--ease);position:relative;overflow:hidden;display:flex;flex-direction:column;min-width:0}
 .product:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:rgba(255,106,26,.25)}
@@ -219,6 +286,9 @@ ul{list-style:none}
 @keyframes popIn{from{opacity:0;transform:scale(.94) translateY(10px)}to{opacity:1;transform:none}}
 .product.pop{animation:popIn .5s var(--ease) backwards}
 
+/* ============================================================
+   LIGHTBOX
+============================================================ */
 .lightbox{position:fixed;inset:0;z-index:2000;background:rgba(7,13,24,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:grid;place-items:center;padding:clamp(16px,4vw,40px);opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
 .lightbox.open{opacity:1;visibility:visible}
 .lb-img{max-width:min(1100px,92vw);max-height:75vh;border-radius:14px;box-shadow:0 40px 100px rgba(0,0,0,.6);transform:scale(.92);transition:transform .4s var(--ease);object-fit:contain}
@@ -233,6 +303,9 @@ ul{list-style:none}
 .lb-nav.next{right:clamp(8px,2vw,24px)}
 .lb-nav svg{width:20px;height:20px;stroke-width:2.4}
 
+/* ============================================================
+   MATERIALS
+============================================================ */
 .grid-materials{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:14px}
 .material{background:linear-gradient(180deg,#fff,var(--paper));border:1px solid var(--line-dark);border-radius:var(--r-lg);padding:clamp(22px,5vw,30px) clamp(16px,3.5vw,24px);text-align:center;transition:all .45s var(--ease);position:relative;overflow:hidden}
 .material:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);border-color:rgba(255,106,26,.25)}
@@ -243,6 +316,9 @@ ul{list-style:none}
 .material h4{font-family:var(--f-display);font-size:clamp(14px,3.5vw,15.5px);font-weight:600;color:var(--navy);margin-bottom:6px}
 .material span{font-size:clamp(12px,3vw,13px);color:var(--t-3);line-height:1.5}
 
+/* ============================================================
+   INDUSTRIES
+============================================================ */
 .grid-industries{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:14px}
 .industry{position:relative;padding:clamp(26px,5vw,36px) clamp(18px,3.5vw,26px);border-radius:var(--r-lg);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.09);text-align:center;transition:all .45s var(--ease);overflow:hidden}
 .industry::before{content:"";position:absolute;inset:0;background:radial-gradient(300px 200px at 50% 100%,rgba(255,106,26,.28),transparent 65%);opacity:0;transition:opacity .5s}
@@ -254,6 +330,9 @@ ul{list-style:none}
 .industry:hover .ind-icon{background:var(--accent);color:#fff;transform:scale(1.06)}
 .industry h4{font-family:var(--f-display);font-size:clamp(13.5px,3.4vw,15.5px);font-weight:600;color:#fff;line-height:1.3}
 
+/* ============================================================
+   WHY (Bento)
+============================================================ */
 .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
 .b-card{background:#fff;border:1px solid var(--line-dark);border-radius:var(--r-lg);padding:clamp(22px,5vw,34px) clamp(20px,4.5vw,30px);transition:all .5s var(--ease);position:relative;overflow:hidden;min-width:0}
 .b-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),transparent);transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease)}
@@ -265,12 +344,15 @@ ul{list-style:none}
 .b-6::before{display:none}
 .b-num{font-family:var(--f-mono);font-size:clamp(10.5px,2.6vw,11.5px);font-weight:500;color:var(--accent);letter-spacing:.15em;margin-bottom:14px}
 .b-6 .b-num{color:rgba(255,255,255,.5)}
-.b-card h4{font-family:var(--f-display);font-size:clamp(15.5px,4vw,19px);font-weight:600;color:var(--navy);letter-spacing:-.02em;margin-bottom:8px;line-height:1.35;word-wrap:break-word}
+.b-card h4{font-family:var(--f-display);font-size:clamp(15.5px,4vw,19px);font-weight:600;color:var(--navy);letter-spacing:-.02em;margin-bottom:8px;line-height:1.28;word-wrap:break-word}
 .b-6 h4{color:#fff;font-size:clamp(17px,4.5vw,24px)}
 .b-card p{font-size:clamp(13.5px,3.4vw,14.5px);color:var(--t-2);line-height:1.65}
 .b-6 p{color:rgba(255,255,255,.65);font-size:clamp(13.5px,3.5vw,15px);max-width:600px}
 .b-6 .b-cta{margin-top:20px}
 
+/* ============================================================
+   CONTACT
+============================================================ */
 .contact-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(24px,4vw,40px);align-items:start}
 .info-panel{background:linear-gradient(160deg,var(--navy),var(--navy-3));border-radius:var(--r-xl);padding:clamp(24px,5vw,42px);color:#fff;box-shadow:0 30px 70px rgba(11,23,41,.28);position:relative;overflow:hidden;min-width:0}
 .info-panel::before{content:"";position:absolute;top:-30%;right:-30%;width:80%;height:80%;background:radial-gradient(circle,rgba(255,106,26,.25),transparent 60%);filter:blur(40px);pointer-events:none}
@@ -304,14 +386,20 @@ ul{list-style:none}
 .map-wrap{margin-top:clamp(36px,6vw,60px);border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line-dark);box-shadow:var(--sh-md)}
 .map-wrap iframe{width:100%;height:clamp(280px,50vw,420px);border:0;display:block;filter:grayscale(.2) contrast(1.05)}
 
+/* ============================================================
+   CTA BANNER
+============================================================ */
 .cta-banner{position:relative;overflow:hidden;background:linear-gradient(120deg,var(--accent) 0%,#ff8c42 100%);color:#fff;padding:clamp(40px,8vw,72px) 0}
 .cta-banner::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);background-size:22px 22px;opacity:.6}
 .cta-banner .wrap{position:relative;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-.cta-banner h3{font-family:var(--f-display);font-size:clamp(1.3rem,4.5vw,2.2rem);font-weight:700;letter-spacing:-.03em;line-height:1.2;margin-bottom:6px}
+.cta-banner h3{font-family:var(--f-display);font-size:clamp(1.3rem,4.5vw,2.2rem);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-bottom:6px}
 .cta-banner p{color:rgba(255,255,255,.9);font-size:clamp(13.5px,3.5vw,15.5px)}
 .cta-banner .btn{background:#fff;color:var(--navy);box-shadow:0 12px 32px rgba(0,0,0,.2)}
 .cta-banner .btn:hover{background:var(--navy);color:#fff;transform:translateY(-3px)}
 
+/* ============================================================
+   FOOTER
+============================================================ */
 footer{background:var(--ink);color:rgba(255,255,255,.55);padding:clamp(50px,8vw,80px) 0 0;font-size:clamp(13.5px,3.4vw,14.5px)}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.4fr;gap:clamp(28px,5vw,52px);padding-bottom:clamp(36px,6vw,60px);border-bottom:1px solid rgba(255,255,255,.08)}
 footer h5{font-family:var(--f-display);font-size:12.5px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:.14em;margin-bottom:18px}
@@ -325,12 +413,29 @@ footer ul a:hover{color:var(--accent)}
 .foot-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:22px 0;font-size:clamp(12px,3vw,13.5px)}
 .gst-badge{font-family:var(--f-mono);font-size:11.5px;padding:5px 12px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);letter-spacing:.03em}
 
-.wa{position:fixed;right:clamp(12px,3vw,24px);z-index:900;width:clamp(52px,13vw,60px);height:clamp(52px,13vw,60px);border-radius:50%;background:linear-gradient(135deg,#25d366,#128c4a);display:grid;place-items:center;box-shadow:0 12px 32px rgba(37,211,102,.4);transition:transform .3s var(--ease);bottom:calc(clamp(12px,3vw,24px) + env(safe-area-inset-bottom))}
+/* ============================================================
+   WHATSAPP FLOAT
+============================================================ */
+.wa{
+  position:fixed;
+  right:clamp(12px,3vw,24px);bottom:clamp(12px,3vw,24px);
+  z-index:900;
+  width:clamp(52px,13vw,60px);height:clamp(52px,13vw,60px);
+  border-radius:50%;
+  background:linear-gradient(135deg,#25d366,#128c4a);
+  display:grid;place-items:center;
+  box-shadow:0 12px 32px rgba(37,211,102,.4);
+  transition:transform .3s var(--ease);
+  bottom:calc(clamp(12px,3vw,24px) + env(safe-area-inset-bottom));
+}
 .wa:hover{transform:scale(1.08) rotate(-6deg)}
 .wa svg{width:clamp(26px,6.5vw,30px);height:clamp(26px,6.5vw,30px);fill:#fff}
 .wa::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 0 rgba(37,211,102,.55);animation:waPulse 2.4s infinite}
 @keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
 
+/* ============================================================
+   REVEAL
+============================================================ */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
 .rv.in{opacity:1;transform:none}
 .rv[data-d="1"]{transition-delay:.08s}
@@ -339,6 +444,9 @@ footer ul a:hover{color:var(--accent)}
 .rv[data-d="4"]{transition-delay:.32s}
 .rv[data-d="5"]{transition-delay:.4s}
 
+/* ============================================================
+   RESPONSIVE
+============================================================ */
 @media(max-width:1024px){
   .hero-grid{grid-template-columns:1fr;gap:40px}
   .hero-card{max-width:100%}
@@ -350,9 +458,9 @@ footer ul a:hover{color:var(--accent)}
   .b-6{grid-column:span 4}
   .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
 }
-@media(max-width:900px){.menu{display:none}.burger{display:block}}
 @media(max-width:768px){
-  .nav-cta{display:none}
+  .menu,.nav-cta{display:none}
+  .burger{display:block}
   .hero{padding:calc(90px + env(safe-area-inset-top)) 0 60px}
   .stats{grid-template-columns:1fr 1fr}
   .stat:nth-child(2),.stat:nth-child(4){transform:none}
@@ -364,8 +472,6 @@ footer ul a:hover{color:var(--accent)}
   .foot-grid{grid-template-columns:1fr;gap:32px;padding-bottom:34px}
   .scroll-cue{display:none}
   .about-points{margin:22px 0 26px}
-  .lang-label{display:none}
-  .lang-btn{padding:9px 11px}
 }
 @media(max-width:480px){
   .hero h1{font-size:clamp(1.55rem,7.5vw,2rem)}
@@ -388,6 +494,7 @@ footer ul a:hover{color:var(--accent)}
   .brand-txt span{font-size:8px}
   .brand-mark{width:38px;height:38px}
 }
+/* Reduce motion */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .rv{opacity:1;transform:none}
@@ -396,6 +503,7 @@ footer ul a:hover{color:var(--accent)}
 </head>
 <body>
 
+<!-- LOADER -->
 <div id="loader">
   <div class="load-mark">
     <img src="logo.png" alt="Nikita Hydraulic" />
@@ -403,158 +511,134 @@ footer ul a:hover{color:var(--accent)}
   </div>
 </div>
 
+<!-- NAV -->
 <nav class="nav-wrap" id="nav">
   <div class="wrap nav">
     <a href="#home" class="brand">
       <div class="brand-mark"><img src="logo.png" alt="Nikita Hydraulic Logo" /></div>
       <div class="brand-txt">
         <b>Nikita Hydraulic</b>
-        <span data-en="Since 2010 · Pune" data-hi="2010 से · पुणे" data-mr="2010 पासून · पुणे">Since 2010 · Pune</span>
+        <span>Since 2010 · Pune</span>
       </div>
     </a>
-    <div class="menu">
-      <a href="#home" class="active" data-en="Home" data-hi="होम" data-mr="मुख्यपृष्ठ">Home</a>
-      <a href="#about" data-en="About" data-hi="परिचय" data-mr="आमच्याबद्दल">About</a>
-      <a href="#products" data-en="Products" data-hi="उत्पाद" data-mr="उत्पादने">Products</a>
-      <a href="#materials" data-en="Materials" data-hi="सामग्री" data-mr="साहित्य">Materials</a>
-      <a href="#industries" data-en="Industries" data-hi="उद्योग" data-mr="उद्योग">Industries</a>
-      <a href="#why" data-en="Why Us" data-hi="हमें क्यों चुनें" data-mr="आम्हालाच का">Why Us</a>
-      <a href="#contact" data-en="Contact" data-hi="संपर्क" data-mr="संपर्क">Contact</a>
+    <div class="menu" id="menu">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#materials">Materials</a>
+      <a href="#industries">Industries</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
     </div>
-    <div class="nav-right">
-      <div class="lang-switch" id="langSwitch">
-        <button class="lang-btn" id="langBtn" aria-label="Change language">
-          <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span class="lang-label" id="langLabel">EN</span>
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="lang-menu" id="langMenu">
-          <button data-lang="en" class="active"><span>English</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></button>
-          <button data-lang="hi"><span>हिंदी</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></button>
-          <button data-lang="mr"><span>मराठी</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></button>
-        </div>
-      </div>
-      <a href="#contact" class="nav-cta">
-        <span data-en="Get a Quote" data-hi="कोटेशन लें" data-mr="कोट मिळवा">Get a Quote</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
+    <a href="#contact" class="nav-cta">
+      Get a Quote
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <aside class="drawer" id="drawer">
-  <a href="#home" data-en="Home" data-hi="होम" data-mr="मुख्यपृष्ठ">Home</a>
-  <a href="#about" data-en="About" data-hi="परिचय" data-mr="आमच्याबद्दल">About</a>
-  <a href="#products" data-en="Products" data-hi="उत्पाद" data-mr="उत्पादने">Products</a>
-  <a href="#materials" data-en="Materials" data-hi="सामग्री" data-mr="साहित्य">Materials</a>
-  <a href="#industries" data-en="Industries" data-hi="उद्योग" data-mr="उद्योग">Industries</a>
-  <a href="#why" data-en="Why Us" data-hi="हमें क्यों चुनें" data-mr="आम्हालाच का">Why Us</a>
-  <a href="#contact" data-en="Contact" data-hi="संपर्क" data-mr="संपर्क">Contact</a>
-  <div class="drawer-lang">
-    <button data-lang="en" class="active">English</button>
-    <button data-lang="hi">हिंदी</button>
-    <button data-lang="mr">मराठी</button>
-  </div>
-  <a href="tel:+918149002309" class="drawer-cta">📞 8149002309</a>
+  <a href="#home">Home</a><a href="#about">About</a><a href="#products">Products</a>
+  <a href="#materials">Materials</a><a href="#industries">Industries</a>
+  <a href="#why">Why Us</a><a href="#contact">Contact</a>
+  <a href="tel:+918149002309" class="drawer-cta">📞 Call 8149002309</a>
 </aside>
 
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="wrap hero-grid">
     <div>
-      <div class="chip rv"><span class="live"></span><span data-en="Open 24×7 · Bhosari MIDC, Pune" data-hi="24×7 खुला · भोसरी MIDC, पुणे" data-mr="24×7 उघडे · भोसरी MIDC, पुणे">Open 24×7 · Bhosari MIDC, Pune</span></div>
-      <h1 class="rv" data-d="1"><em>NIKITA HYDRAULIC</em><br><span data-en="Rubber Moulding Manufacturer" data-hi="रबर मोल्डिंग निर्माता" data-mr="रबर मोल्डिंग उत्पादक">Rubber Moulding Manufacturer</span></h1>
-      <p class="hero-sub rv" data-d="2" data-en="Manufacturer of O-rings, gaskets, oil seals, rubber washers, grommets & custom rubber parts — in NBR, Silicone, EPDM, Viton FKM, Natural Rubber & SBR. Fast delivery. Small MOQ. Bulk capacity." data-hi="ओ-रिंग्स, गैसकेट्स, ऑयल सील्स, रबर वॉशर्स, ग्रोमेट्स और कस्टम रबर पार्ट्स के निर्माता — NBR, सिलिकॉन, EPDM, वाइटन FKM, नेचुरल रबर और SBR में। तेज़ डिलीवरी। छोटा MOQ। थोक क्षमता।" data-mr="ओ-रिंग्स, गॅस्केट्स, ऑइल सील्स, रबर वॉशर्स, ग्रोमेट्स आणि कस्टम रबर पार्ट्सचे उत्पादक — NBR, सिलिकॉन, EPDM, व्हायटन FKM, नैसर्गिक रबर आणि SBR मध्ये. झटपट डिलिव्हरी. लहान MOQ. मोठ्या प्रमाणात क्षमता.">Manufacturer of O-rings, gaskets, oil seals, rubber washers, grommets &amp; custom rubber parts.</p>
+      <div class="chip rv"><span class="live"></span> Open 24×7 · Bhosari MIDC, Pune</div>
+      <h1 class="rv" data-d="1"><em>NIKITA HYDRAULIC</em><br>Rubber Moulding Manufacturer</h1>
+      <p class="hero-sub rv" data-d="2">Manufacturer of O-rings, gaskets, oil seals, rubber washers, grommets &amp; custom rubber parts — in NBR, Silicone, EPDM, Viton FKM, Natural Rubber &amp; SBR. Fast delivery. Small MOQ. Bulk capacity.</p>
       <div class="hero-btns rv" data-d="3">
         <a href="#contact" class="btn btn-primary">
-          <span data-en="Request a Quote" data-hi="कोटेशन मांगें" data-mr="कोट विनंती करा">Request a Quote</span>
+          Request a Quote
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <a href="https://wa.me/918149002309?text=Hello%20Nikita%20Hydraulic%2C%20I%20need%20a%20quote." target="_blank" rel="noopener" class="btn btn-glass">
           <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.1-.3.2-.5.1-.2 0-.3 0-.5s-.6-1.5-.9-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 .9-1 2.3 0 1.3.9 2.6 1 2.8.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
-          <span data-en="WhatsApp" data-hi="व्हाट्सएप" data-mr="व्हॉट्सअ‍ॅप">WhatsApp</span>
+          WhatsApp
         </a>
       </div>
       <div class="hero-mini rv" data-d="4">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-en="15+ Years" data-hi="15+ वर्षे" data-mr="15+ वर्षे">15+ Years</span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-en="200+ Clients" data-hi="200+ ग्राहक" data-mr="200+ ग्राहक">200+ Clients</span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-en="GST Registered" data-hi="GST पंजीकृत" data-mr="GST नोंदणीकृत">GST Registered</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>15+ Years</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>200+ Clients</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>GST Registered</div>
       </div>
     </div>
     <aside class="hero-card rv" data-d="2">
-      <div class="hc-head"><h3 data-en="Company Snapshot" data-hi="कंपनी सारांश" data-mr="कंपनी झलक">Company Snapshot</h3><span class="hc-badge">● LIVE</span></div>
-      <div class="hc-row"><span class="k" data-en="Location" data-hi="स्थान" data-mr="ठिकाण">Location</span><span class="v">Bhosari MIDC, Pune</span></div>
-      <div class="hc-row"><span class="k" data-en="Working Hours" data-hi="कार्य समय" data-mr="कामाचे तास">Working Hours</span><span class="v">24 × 7</span></div>
-      <div class="hc-row"><span class="k" data-en="Clients" data-hi="ग्राहक" data-mr="ग्राहक">Clients</span><span class="v">200+</span></div>
-      <div class="hc-row"><span class="k" data-en="GST No." data-hi="GST नंबर" data-mr="GST क्रमांक">GST No.</span><span class="v mono">27BQYPP6822Q1ZJ</span></div>
+      <div class="hc-head"><h3>Company Snapshot</h3><span class="hc-badge">● LIVE</span></div>
+      <div class="hc-row"><span class="k">Location</span><span class="v">Bhosari MIDC, Pune</span></div>
+      <div class="hc-row"><span class="k">Working Hours</span><span class="v">24 × 7</span></div>
+      <div class="hc-row"><span class="k">Clients</span><span class="v">200+</span></div>
+      <div class="hc-row"><span class="k">GST No.</span><span class="v mono">27BQYPP6822Q1ZJ</span></div>
       <div class="hc-cta"><a href="tel:+918149002309" class="btn btn-primary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span data-en="Call Now" data-hi="अभी कॉल करें" data-mr="आता कॉल करा">Call Now</span>
+        Call Now
       </a></div>
     </aside>
   </div>
-  <div class="scroll-cue"><span data-en="Scroll" data-hi="स्क्रॉल" data-mr="स्क्रोल">Scroll</span><div class="bar"></div></div>
+  <div class="scroll-cue"><span>Scroll</span><div class="bar"></div></div>
 </section>
 
+<!-- MARQUEE -->
 <div class="marquee">
   <div class="marquee-track">
-    <div class="marquee-item" data-en="Automotive" data-hi="ऑटोमोटिव" data-mr="ऑटोमोटिव्ह">Automotive</div>
-    <div class="marquee-item" data-en="Industrial Machinery" data-hi="औद्योगिक मशीनरी" data-mr="औद्योगिक मशिनरी">Industrial Machinery</div>
-    <div class="marquee-item" data-en="Electrical & Electronics" data-hi="इलेक्ट्रिकल और इलेक्ट्रॉनिक्स" data-mr="इलेक्ट्रिकल आणि इलेक्ट्रॉनिक्स">Electrical &amp; Electronics</div>
-    <div class="marquee-item" data-en="Agriculture" data-hi="कृषि" data-mr="कृषी">Agriculture</div>
-    <div class="marquee-item" data-en="Pumps & Valves" data-hi="पंप और वाल्व" data-mr="पंप आणि व्हॉल्व्ह">Pumps &amp; Valves</div>
-    <div class="marquee-item" data-en="Custom Compounds" data-hi="कस्टम कंपाउंड" data-mr="कस्टम कंपाउंड">Custom Compounds</div>
-    <div class="marquee-item" data-en="Bulk Production" data-hi="थोक उत्पादन" data-mr="मोठ्या प्रमाणात उत्पादन">Bulk Production</div>
-    <div class="marquee-item" data-en="Automotive" data-hi="ऑटोमोटिव" data-mr="ऑटोमोटिव्ह">Automotive</div>
-    <div class="marquee-item" data-en="Industrial Machinery" data-hi="औद्योगिक मशीनरी" data-mr="औद्योगिक मशिनरी">Industrial Machinery</div>
-    <div class="marquee-item" data-en="Electrical & Electronics" data-hi="इलेक्ट्रिकल और इलेक्ट्रॉनिक्स" data-mr="इलेक्ट्रिकल आणि इलेक्ट्रॉनिक्स">Electrical &amp; Electronics</div>
-    <div class="marquee-item" data-en="Agriculture" data-hi="कृषि" data-mr="कृषी">Agriculture</div>
-    <div class="marquee-item" data-en="Pumps & Valves" data-hi="पंप और वाल्व" data-mr="पंप आणि व्हॉल्व्ह">Pumps &amp; Valves</div>
-    <div class="marquee-item" data-en="Custom Compounds" data-hi="कस्टम कंपाउंड" data-mr="कस्टम कंपाउंड">Custom Compounds</div>
-    <div class="marquee-item" data-en="Bulk Production" data-hi="थोक उत्पादन" data-mr="मोठ्या प्रमाणात उत्पादन">Bulk Production</div>
+    <div class="marquee-item">Automotive</div><div class="marquee-item">Industrial Machinery</div>
+    <div class="marquee-item">Electrical &amp; Electronics</div><div class="marquee-item">Agriculture</div>
+    <div class="marquee-item">Pumps &amp; Valves</div><div class="marquee-item">Custom Compounds</div>
+    <div class="marquee-item">Bulk Production</div>
+    <div class="marquee-item">Automotive</div><div class="marquee-item">Industrial Machinery</div>
+    <div class="marquee-item">Electrical &amp; Electronics</div><div class="marquee-item">Agriculture</div>
+    <div class="marquee-item">Pumps &amp; Valves</div><div class="marquee-item">Custom Compounds</div>
+    <div class="marquee-item">Bulk Production</div>
   </div>
 </div>
 
+<!-- ABOUT -->
 <section class="sec" id="about">
   <div class="wrap">
     <div class="about-grid">
       <div>
-        <span class="tag rv" data-en="About Nikita Hydraulic" data-hi="निकिता हाइड्रोलिक के बारे में" data-mr="निकिता हायड्रॉलिकबद्दल">About Nikita Hydraulic</span>
-        <p class="about-lead rv" data-d="1" data-en="Manufacturing high-quality rubber moulded components from the heart of Pune's industrial belt since 2010." data-hi="2010 से पुणे के औद्योगिक क्षेत्र के केंद्र से उच्च गुणवत्ता वाले रबर मोल्डेड कंपोनेंट्स का निर्माण।" data-mr="2010 पासून पुण्याच्या औद्योगिक पट्ट्याच्या मध्यभागातून उच्च दर्जाचे रबर मोल्डेड घटक तयार करत आहोत.">Manufacturing high-quality rubber moulded components from the heart of Pune's industrial belt since 2010.</p>
-        <p class="about-body rv" data-d="2" data-en="Based in Bhosari MIDC — one of India's most active industrial hubs — we supply precision rubber components to businesses across India. Our strength lies in custom compound development." data-hi="भोसरी MIDC में स्थित — भारत के सबसे सक्रिय औद्योगिक केंद्रों में से एक — हम पूरे भारत में व्यवसायों को सटीक रबर कंपोनेंट्स की आपूर्ति करते हैं। हमारी ताकत कस्टम कंपाउंड डेवलपमेंट में है।" data-mr="भोसरी MIDC मध्ये स्थित — भारतातील सर्वात सक्रिय औद्योगिक केंद्रांपैकी एक — आम्ही संपूर्ण भारतात व्यवसायांना अचूक रबर घटक पुरवतो. आमची ताकद कस्टम कंपाउंड डेव्हलपमेंटमध्ये आहे.">Based in Bhosari MIDC, we supply precision rubber components to businesses across India. Our strength lies in custom compound development.</p>
+        <span class="tag rv">About Nikita Hydraulic</span>
+        <p class="about-lead rv" data-d="1">Manufacturing high-quality <em>rubber moulded components</em> from the heart of Pune's industrial belt since 2010.</p>
+        <p class="about-body rv" data-d="2">Based in Bhosari MIDC — one of India's most active industrial hubs — we supply precision rubber components to businesses across India. Our strength lies in custom compound development: we help you pick the exact material for your temperature, chemical and pressure requirements.</p>
         <ul class="about-points rv" data-d="3">
-          <li><span class="tick">✓</span><span data-en="In-house custom compound development" data-hi="इन-हाउस कस्टम कंपाउंड डेवलपमेंट" data-mr="इन-हाऊस कस्टम कंपाउंड डेव्हलपमेंट">In-house custom compound development</span></li>
-          <li><span class="tick">✓</span><span data-en="Small MOQ accepted for trials & startups" data-hi="ट्रायल और स्टार्टअप के लिए छोटा MOQ स्वीकार" data-mr="चाचणी आणि स्टार्टअपसाठी लहान MOQ स्वीकार">Small MOQ accepted for trials &amp; startups</span></li>
-          <li><span class="tick">✓</span><span data-en="Bulk production capacity for large orders" data-hi="बड़े ऑर्डर के लिए थोक उत्पादन क्षमता" data-mr="मोठ्या ऑर्डरसाठी मोठ्या प्रमाणात उत्पादन क्षमता">Bulk production capacity for large orders</span></li>
-          <li><span class="tick">✓</span><span data-en="Competitive pricing with fast turnaround" data-hi="प्रतिस्पर्धी मूल्य और तेज़ टर्नअराउंड" data-mr="स्पर्धात्मक किंमत आणि झटपट टर्नअराउंड">Competitive pricing with fast turnaround</span></li>
-          <li><span class="tick">✓</span><span data-en="GST-registered, fully compliant business" data-hi="GST पंजीकृत, पूर्ण अनुपालन व्यवसाय" data-mr="GST नोंदणीकृत, पूर्ण अनुपालन व्यवसाय">GST-registered, fully compliant business</span></li>
+          <li><span class="tick">✓</span> In-house custom compound development</li>
+          <li><span class="tick">✓</span> Small MOQ accepted for trials &amp; startups</li>
+          <li><span class="tick">✓</span> Bulk production capacity for large orders</li>
+          <li><span class="tick">✓</span> Competitive pricing with fast turnaround</li>
+          <li><span class="tick">✓</span> GST-registered, fully compliant business</li>
         </ul>
-        <a href="#products" class="btn btn-glass rv" data-d="4" style="background:var(--paper-2);color:var(--navy);border-color:transparent"><span data-en="Explore Products" data-hi="उत्पाद देखें" data-mr="उत्पादने पहा">Explore Products</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="#products" class="btn btn-glass rv" data-d="4" style="background:var(--paper-2);color:var(--navy);border-color:transparent">Explore Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div class="stats rv" data-d="2">
-        <div class="stat"><b data-count="15">0<em>+</em></b><span data-en="Years of Experience" data-hi="अनुभव के वर्ष" data-mr="अनुभवाची वर्षे">Years of Experience</span></div>
-        <div class="stat"><b data-count="200">0<em>+</em></b><span data-en="Clients Served" data-hi="सेवा किए गए ग्राहक" data-mr="सेवा केलेले ग्राहक">Clients Served</span></div>
-        <div class="stat"><b data-count="6">0</b><span data-en="Product Categories" data-hi="उत्पाद श्रेणियां" data-mr="उत्पादन श्रेणी">Product Categories</span></div>
-        <div class="stat"><b data-count="6">0</b><span data-en="Rubber Compounds" data-hi="रबर कंपाउंड" data-mr="रबर कंपाउंड">Rubber Compounds</span></div>
+        <div class="stat"><b data-count="15">0<em>+</em></b><span>Years of Experience</span></div>
+        <div class="stat"><b data-count="200">0<em>+</em></b><span>Clients Served</span></div>
+        <div class="stat"><b data-count="6">0</b><span>Product Categories</span></div>
+        <div class="stat"><b data-count="6">0</b><span>Rubber Compounds</span></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- PRODUCTS -->
 <section class="sec alt" id="products">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="tag" style="justify-content:center" data-en="Our Products" data-hi="हमारे उत्पाद" data-mr="आमची उत्पादने">Our Products</span>
-      <h2 data-en="Rubber moulded components" data-hi="रबर मोल्डेड कंपोनेंट्स" data-mr="रबर मोल्डेड घटक">Rubber moulded components</h2>
-      <p data-en="Filter by category to find exactly what you need — every part is made to your drawing and specification." data-hi="श्रेणी से फ़िल्टर करें — हर पार्ट आपके ड्रॉइंग और विवरण के अनुसार बनाया जाता है।" data-mr="श्रेणीनुसार फिल्टर करा — प्रत्येक भाग तुमच्या ड्रॉइंग आणि तपशीलानुसार बनवला जातो.">Filter by category to find exactly what you need.</p>
+      <span class="tag" style="justify-content:center">Our Products</span>
+      <h2>Rubber moulded <em>components</em></h2>
+      <p>Filter by category to find exactly what you need — every part is made to your drawing and specification.</p>
     </div>
     <div class="filter-wrap">
       <div class="filter-bar rv">
-        <button class="filter-btn active" data-filter="all" data-en="All Products" data-hi="सभी उत्पाद" data-mr="सर्व उत्पादने">All Products</button>
-        <button class="filter-btn" data-filter="seals" data-en="Seals" data-hi="सील" data-mr="सील">Seals</button>
-        <button class="filter-btn" data-filter="rubber" data-en="Rubber Parts" data-hi="रबर पार्ट्स" data-mr="रबर भाग">Rubber Parts</button>
-        <button class="filter-btn" data-filter="custom" data-en="Custom" data-hi="कस्टम" data-mr="कस्टम">Custom</button>
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="seals">Seals</button>
+        <button class="filter-btn" data-filter="rubber">Rubber Parts</button>
+        <button class="filter-btn" data-filter="custom">Custom</button>
       </div>
     </div>
     <div class="grid-products" id="productGrid">
@@ -565,12 +649,7 @@ footer ul a:hover{color:var(--accent)}
           <div class="p-overlay"><div class="p-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
           <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/></svg></div>
         </div>
-        <div class="p-body">
-          <div class="p-cat" data-en="Seals" data-hi="सील" data-mr="सील">Seals</div>
-          <h3 data-en="O-Rings" data-hi="ओ-रिंग्स" data-mr="ओ-रिंग्स">O-Rings</h3>
-          <p data-en="Precision-moulded O-rings in all standard and custom sizes for leak-proof sealing across hydraulic and pneumatic systems." data-hi="हाइड्रोलिक और वायवीय प्रणालियों में लीक-प्रूफ सीलिंग के लिए सभी मानक और कस्टम आकारों में सटीक मोल्डेड ओ-रिंग्स।" data-mr="हायड्रॉलिक आणि वायवीय प्रणालींमध्ये गळती-प्रतिरोधक सीलिंगसाठी सर्व मानक आणि कस्टम आकारांमध्ये अचूक मोल्डेड ओ-रिंग्स.">Precision-moulded O-rings in all standard and custom sizes for leak-proof sealing.</p>
-          <div class="p-tags"><span class="p-tag">NBR</span><span class="p-tag">Silicone</span><span class="p-tag">Viton</span></div>
-        </div>
+        <div class="p-body"><div class="p-cat">Seals</div><h3>O-Rings</h3><p>Precision-moulded O-rings in all standard and custom sizes for leak-proof sealing across hydraulic and pneumatic systems.</p><div class="p-tags"><span class="p-tag">NBR</span><span class="p-tag">Silicone</span><span class="p-tag">Viton</span></div></div>
       </article>
 
       <article class="product" data-cat="seals">
@@ -579,12 +658,7 @@ footer ul a:hover{color:var(--accent)}
           <div class="p-overlay"><div class="p-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
           <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/></svg></div>
         </div>
-        <div class="p-body">
-          <div class="p-cat" data-en="Seals" data-hi="सील" data-mr="सील">Seals</div>
-          <h3 data-en="Gaskets" data-hi="गैसकेट्स" data-mr="गॅस्केट्स">Gaskets</h3>
-          <p data-en="Die-cut and moulded gaskets for flanges, covers and industrial sealing applications with tight tolerance control." data-hi="फ्लैंज, कवर और औद्योगिक सीलिंग अनुप्रयोगों के लिए डाई-कट और मोल्डेड गैसकेट्स, सख्त सहनशीलता नियंत्रण के साथ।" data-mr="फ्लँज, कव्हर आणि औद्योगिक सीलिंग ऍप्लिकेशन्ससाठी डाय-कट आणि मोल्डेड गॅस्केट्स, कडक सहनशीलता नियंत्रणासह.">Die-cut and moulded gaskets for flanges, covers and industrial sealing applications.</p>
-          <div class="p-tags"><span class="p-tag" data-en="Custom Sizes" data-hi="कस्टम आकार" data-mr="कस्टम आकार">Custom Sizes</span><span class="p-tag" data-en="Die-cut" data-hi="डाई-कट" data-mr="डाय-कट">Die-cut</span></div>
-        </div>
+        <div class="p-body"><div class="p-cat">Seals</div><h3>Gaskets</h3><p>Die-cut and moulded gaskets for flanges, covers and industrial sealing applications with tight tolerance control.</p><div class="p-tags"><span class="p-tag">Custom Sizes</span><span class="p-tag">Die-cut</span></div></div>
       </article>
 
       <article class="product" data-cat="seals">
@@ -593,12 +667,7 @@ footer ul a:hover{color:var(--accent)}
           <div class="p-overlay"><div class="p-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
           <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div>
         </div>
-        <div class="p-body">
-          <div class="p-cat" data-en="Seals" data-hi="सील" data-mr="सील">Seals</div>
-          <h3 data-en="Oil Seals" data-hi="ऑयल सील्स" data-mr="ऑइल सील्स">Oil Seals</h3>
-          <p data-en="Rotary shaft oil seals engineered for hydraulic and automotive applications — designed for high pressure and long life." data-hi="हाइड्रोलिक और ऑटोमोटिव अनुप्रयोगों के लिए इंजीनियर किए गए रोटरी शाफ्ट ऑयल सील्स — उच्च दबाव और लंबे जीवन के लिए डिज़ाइन किए गए।" data-mr="हायड्रॉलिक आणि ऑटोमोटिव्ह ऍप्लिकेशन्ससाठी डिझाइन केलेले रोटरी शाफ्ट ऑइल सील्स — उच्च दाब आणि दीर्घ आयुष्यासाठी.">Rotary shaft oil seals engineered for hydraulic and automotive applications.</p>
-          <div class="p-tags"><span class="p-tag" data-en="High Pressure" data-hi="उच्च दबाव" data-mr="उच्च दाब">High Pressure</span><span class="p-tag" data-en="Rotary" data-hi="रोटरी" data-mr="रोटरी">Rotary</span></div>
-        </div>
+        <div class="p-body"><div class="p-cat">Seals</div><h3>Oil Seals</h3><p>Rotary shaft oil seals engineered for hydraulic and automotive applications — designed for high pressure and long life.</p><div class="p-tags"><span class="p-tag">High Pressure</span><span class="p-tag">Rotary</span></div></div>
       </article>
 
       <article class="product" data-cat="rubber">
@@ -607,12 +676,7 @@ footer ul a:hover{color:var(--accent)}
           <div class="p-overlay"><div class="p-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
           <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
         </div>
-        <div class="p-body">
-          <div class="p-cat" data-en="Rubber Parts" data-hi="रबर पार्ट्स" data-mr="रबर भाग">Rubber Parts</div>
-          <h3 data-en="Rubber Washers" data-hi="रबर वॉशर्स" data-mr="रबर वॉशर्स">Rubber Washers</h3>
-          <p data-en="Durable rubber washers for vibration damping, sealing and load distribution in machinery and assemblies." data-hi="मशीनरी और असेंबली में कंपन डैम्पिंग, सीलिंग और लोड वितरण के लिए टिकाऊ रबर वॉशर्स।" data-mr="मशिनरी आणि असेंब्लीमध्ये कंपन डॅम्पिंग, सीलिंग आणि भार वितरणासाठी टिकाऊ रबर वॉशर्स.">Durable rubber washers for vibration damping, sealing and load distribution.</p>
-          <div class="p-tags"><span class="p-tag" data-en="Bulk Ready" data-hi="थोक तैयार" data-mr="मोठ्या प्रमाणात तयार">Bulk Ready</span><span class="p-tag" data-en="Damping" data-hi="डैम्पिंग" data-mr="डॅम्पिंग">Damping</span></div>
-        </div>
+        <div class="p-body"><div class="p-cat">Rubber Parts</div><h3>Rubber Washers</h3><p>Durable rubber washers for vibration damping, sealing and load distribution in machinery and assemblies.</p><div class="p-tags"><span class="p-tag">Bulk Ready</span><span class="p-tag">Damping</span></div></div>
       </article>
 
       <article class="product" data-cat="rubber">
@@ -621,12 +685,7 @@ footer ul a:hover{color:var(--accent)}
           <div class="p-overlay"><div class="p-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
           <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></div>
         </div>
-        <div class="p-body">
-          <div class="p-cat" data-en="Rubber Parts" data-hi="रबर पार्ट्स" data-mr="रबर भाग">Rubber Parts</div>
-          <h3 data-en="Rubber Grommets" data-hi="रबर ग्रोमेट्स" data-mr="रबर ग्रोमेट्स">Rubber Grommets</h3>
-          <p data-en="Protective grommets for cable routing, panel edges and wire pass-throughs — available in electrical-grade compounds." data-hi="केबल रूटिंग, पैनल किनारों और वायर पास-थ्रू के लिए सुरक्षात्मक ग्रोमेट्स — इलेक्ट्रिकल-ग्रेड कंपाउंड में उपलब्ध।" data-mr="केबल राउटिंग, पॅनल कडा आणि वायर पास-थ्रूसाठी संरक्षक ग्रोमेट्स — इलेक्ट्रिकल-ग्रेड कंपाउंडमध्ये उपलब्ध.">Protective grommets for cable routing, panel edges and wire pass-throughs.</p>
-          <div class="p-tags"><span class="p-tag" data-en="Electrical Grade" data-hi="इलेक्ट्रिकल ग्रेड" data-mr="इलेक्ट्रिकल ग्रेड">Electrical Grade</span><span class="p-tag" data-en="Panel" data-hi="पैनल" data-mr="पॅनल">Panel</span></div>
-        </div>
+        <div class="p-body"><div class="p-cat">Rubber Parts</div><h3>Rubber Grommets</h3><p>Protective grommets for cable routing, panel edges and wire pass-throughs — available in electrical-grade compounds.</p><div class="p-tags"><span class="p-tag">Electrical Grade</span><span class="p-tag">Panel</span></div></div>
       </article>
 
       <article class="product" data-cat="custom">
@@ -635,18 +694,14 @@ footer ul a:hover{color:var(--accent)}
           <div class="p-overlay"><div class="p-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
           <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9 1.65 1.65 0 0 0 4.27 7.18l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
         </div>
-        <div class="p-body">
-          <div class="p-cat" data-en="Custom" data-hi="कस्टम" data-mr="कस्टम">Custom</div>
-          <h3 data-en="Custom Rubber Parts" data-hi="कस्टम रबर पार्ट्स" data-mr="कस्टम रबर भाग">Custom Rubber Parts</h3>
-          <p data-en="Fully custom-moulded rubber components developed as per your drawing, sample or specification. From design to delivery." data-hi="आपके ड्रॉइंग, नमूने या विवरण के अनुसार विकसित पूर्ण कस्टम-मोल्डेड रबर कंपोनेंट्स। डिज़ाइन से डिलीवरी तक।" data-mr="तुमच्या ड्रॉइंग, नमुना किंवा तपशीलानुसार विकसित पूर्ण कस्टम-मोल्डेड रबर घटक. डिझाइनपासून डिलिव्हरीपर्यंत.">Fully custom-moulded rubber components developed as per your drawing, sample or specification.</p>
-          <div class="p-tags"><span class="p-tag" data-en="Made to Order" data-hi="ऑर्डर पर बनाया गया" data-mr="ऑर्डरनुसार बनवलेले">Made to Order</span><span class="p-tag">OEM</span></div>
-        </div>
+        <div class="p-body"><div class="p-cat">Custom</div><h3>Custom Rubber Parts</h3><p>Fully custom-moulded rubber components developed as per your drawing, sample or specification. From design to delivery.</p><div class="p-tags"><span class="p-tag">Made to Order</span><span class="p-tag">OEM</span></div></div>
       </article>
 
     </div>
   </div>
 </section>
 
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <button class="lb-close" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   <button class="lb-nav prev" id="lbPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -655,136 +710,269 @@ footer ul a:hover{color:var(--accent)}
   <button class="lb-nav next" id="lbNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
 </div>
 
+<!-- MATERIALS -->
 <section class="sec" id="materials">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="tag" style="justify-content:center" data-en="Materials" data-hi="सामग्री" data-mr="साहित्य">Materials</span>
-      <h2 data-en="Rubber compounds we master" data-hi="रबर कंपाउंड जिनमें हम माहिर हैं" data-mr="आम्ही ज्या रबर कंपाउंडमध्ये तज्ञ आहोत">Rubber compounds we master</h2>
-      <p data-en="The right compound makes all the difference. We help you choose based on temperature, chemical and pressure requirements." data-hi="सही कंपाउंड सारा फर्क डालता है। हम तापमान, रासायनिक और दबाव आवश्यकताओं के आधार पर चुनने में मदद करते हैं।" data-mr="योग्य कंपाउंड सगळा फरक घडवतो. आम्ही तापमान, रासायनिक आणि दाब आवश्यकतांनुसार निवडण्यात मदत करतो.">The right compound makes all the difference. We help you choose based on your requirements.</p>
+      <span class="tag" style="justify-content:center">Materials</span>
+      <h2>Rubber compounds we <em>master</em></h2>
+      <p>The right compound makes all the difference. We help you choose based on temperature, chemical and pressure requirements.</p>
     </div>
     <div class="grid-materials">
-      <div class="material rv"><div class="m-code">NBR</div><h4 data-en="Nitrile" data-hi="नाइट्राइल" data-mr="नायट्राइल">Nitrile</h4><span data-en="Oil & fuel resistant" data-hi="तेल और ईंधन प्रतिरोधी" data-mr="तेल आणि इंधन प्रतिरोधक">Oil &amp; fuel resistant</span></div>
-      <div class="material rv" data-d="1"><div class="m-code">Si</div><h4 data-en="Silicone" data-hi="सिलिकॉन" data-mr="सिलिकॉन">Silicone</h4><span data-en="Wide temperature range" data-hi="विस्तृत तापमान सीमा" data-mr="विस्तृत तापमान श्रेणी">Wide temperature range</span></div>
-      <div class="material rv" data-d="2"><div class="m-code">EPDM</div><h4>EPDM</h4><span data-en="Weather & ozone resistant" data-hi="मौसम और ओज़ोन प्रतिरोधी" data-mr="हवामान आणि ओझोन प्रतिरोधक">Weather &amp; ozone resistant</span></div>
-      <div class="material rv" data-d="3"><div class="m-code">FKM</div><h4 data-en="Viton FKM" data-hi="वाइटन FKM" data-mr="व्हायटन FKM">Viton FKM</h4><span data-en="Chemical & heat resistant" data-hi="रासायनिक और ताप प्रतिरोधी" data-mr="रासायनिक आणि उष्णता प्रतिरोधक">Chemical &amp; heat resistant</span></div>
-      <div class="material rv" data-d="4"><div class="m-code">NR</div><h4 data-en="Natural Rubber" data-hi="प्राकृतिक रबर" data-mr="नैसर्गिक रबर">Natural Rubber</h4><span data-en="High elasticity & strength" data-hi="उच्च लोच और मजबूती" data-mr="उच्च लवचिकता आणि मजबुती">High elasticity &amp; strength</span></div>
-      <div class="material rv" data-d="5"><div class="m-code">SBR</div><h4>SBR</h4><span data-en="Abrasion resistant" data-hi="घर्षण प्रतिरोधी" data-mr="घर्षण प्रतिरोधक">Abrasion resistant</span></div>
+      <div class="material rv"><div class="m-code">NBR</div><h4>Nitrile</h4><span>Oil &amp; fuel resistant</span></div>
+      <div class="material rv" data-d="1"><div class="m-code">Si</div><h4>Silicone</h4><span>Wide temperature range</span></div>
+      <div class="material rv" data-d="2"><div class="m-code">EPDM</div><h4>EPDM</h4><span>Weather &amp; ozone resistant</span></div>
+      <div class="material rv" data-d="3"><div class="m-code">FKM</div><h4>Viton FKM</h4><span>Chemical &amp; heat resistant</span></div>
+      <div class="material rv" data-d="4"><div class="m-code">NR</div><h4>Natural Rubber</h4><span>High elasticity &amp; strength</span></div>
+      <div class="material rv" data-d="5"><div class="m-code">SBR</div><h4>SBR</h4><span>Abrasion resistant</span></div>
     </div>
   </div>
 </section>
 
+<!-- INDUSTRIES -->
 <section class="sec dark" id="industries">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="tag" style="justify-content:center" data-en="Industries We Serve" data-hi="हम जिन उद्योगों की सेवा करते हैं" data-mr="आम्ही सेवा देणारे उद्योग">Industries We Serve</span>
-      <h2 data-en="Trusted across multiple sectors" data-hi="कई क्षेत्रों में विश्वसनीय" data-mr="अनेक क्षेत्रांमध्ये विश्वासार्ह">Trusted across multiple sectors</h2>
-      <p data-en="Our rubber components power machines, vehicles and equipment across diverse industries nationwide." data-hi="हमारे रबर कंपोनेंट्स देश भर के विविध उद्योगों में मशीनों, वाहनों और उपकरणों को शक्ति देते हैं।" data-mr="आमचे रबर घटक देशभरातील विविध उद्योगांमध्ये मशिन, वाहने आणि उपकरणांना शक्ती देतात.">Our rubber components power machines, vehicles and equipment across diverse industries.</p>
+      <span class="tag" style="justify-content:center">Industries We Serve</span>
+      <h2>Trusted across <em>multiple sectors</em></h2>
+      <p>Our rubber components power machines, vehicles and equipment across diverse industries nationwide.</p>
     </div>
     <div class="grid-industries">
-      <div class="industry rv"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 17v-6l2-5h10l2 5v6M7 17v2M17 17v2"/><circle cx="8" cy="14" r="1.5"/><circle cx="16" cy="14" r="1.5"/></svg></div><h4 data-en="Automotive" data-hi="ऑटोमोटिव" data-mr="ऑटोमोटिव्ह">Automotive</h4></div>
-      <div class="industry rv" data-d="1"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l4-3 4 3v13M13 21V12l4-2 4 2v9"/></svg></div><h4 data-en="Industrial Machinery" data-hi="औद्योगिक मशीनरी" data-mr="औद्योगिक मशिनरी">Industrial Machinery</h4></div>
-      <div class="industry rv" data-d="2"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h4 data-en="Electrical & Electronics" data-hi="इलेक्ट्रिकल और इलेक्ट्रॉनिक्स" data-mr="इलेक्ट्रिकल आणि इलेक्ट्रॉनिक्स">Electrical &amp; Electronics</h4></div>
-      <div class="industry rv" data-d="3"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M5 22v-6M19 22v-6M5 16a7 7 0 0 1 14 0"/><path d="M9 8l3-3 3 3"/></svg></div><h4 data-en="Agriculture" data-hi="कृषि" data-mr="कृषी">Agriculture</h4></div>
-      <div class="industry rv" data-d="4"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></div><h4 data-en="Pumps & Valves" data-hi="पंप और वाल्व" data-mr="पंप आणि व्हॉल्व्ह">Pumps &amp; Valves</h4></div>
+      <div class="industry rv"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 17v-6l2-5h10l2 5v6M7 17v2M17 17v2"/><circle cx="8" cy="14" r="1.5"/><circle cx="16" cy="14" r="1.5"/></svg></div><h4>Automotive</h4></div>
+      <div class="industry rv" data-d="1"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l4-3 4 3v13M13 21V12l4-2 4 2v9"/></svg></div><h4>Industrial Machinery</h4></div>
+      <div class="industry rv" data-d="2"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h4>Electrical &amp; Electronics</h4></div>
+      <div class="industry rv" data-d="3"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M5 22v-6M19 22v-6M5 16a7 7 0 0 1 14 0"/><path d="M9 8l3-3 3 3"/></svg></div><h4>Agriculture</h4></div>
+      <div class="industry rv" data-d="4"><div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></div><h4>Pumps &amp; Valves</h4></div>
     </div>
   </div>
 </section>
 
+<!-- WHY -->
 <section class="sec alt" id="why">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="tag" style="justify-content:center" data-en="Why Choose Us" data-hi="हमें क्यों चुनें" data-mr="आम्हालाच का">Why Choose Us</span>
-      <h2 data-en="What sets us apart" data-hi="हमें क्या अलग बनाता है" data-mr="आम्हाला वेगळे काय करते">What sets us apart</h2>
-      <p data-en="Quality products, quick service and flexible order quantities — that's the Nikita Hydraulic promise." data-hi="गुणवत्तापूर्ण उत्पाद, तेज़ सेवा और लचीली ऑर्डर मात्रा — यही निकिता हाइड्रोलिक का वादा है।" data-mr="दर्जेदार उत्पादने, झटपट सेवा आणि लवचिक ऑर्डर प्रमाण — हेच निकिता हायड्रॉलिकचे वचन आहे.">Quality products, quick service and flexible order quantities — that's the Nikita Hydraulic promise.</p>
+      <span class="tag" style="justify-content:center">Why Choose Us</span>
+      <h2>What sets us <em>apart</em></h2>
+      <p>Quality products, quick service and flexible order quantities — that's the Nikita Hydraulic promise.</p>
     </div>
     <div class="bento">
-      <div class="b-card b-1 rv"><div class="b-num">01 / USP</div><h4 data-en="Fast delivery — because your production can't wait." data-hi="तेज़ डिलीवरी — क्योंकि आपका उत्पादन रुक नहीं सकता।" data-mr="झटपट डिलिव्हरी — कारण तुमचं उत्पादन थांबू शकत नाही.">Fast delivery — because your production can't wait.</h4><p data-en="Quick turnaround times on critical rubber parts. We understand deadlines and we deliver on them, order after order." data-hi="महत्वपूर्ण रबर पार्ट्स पर तेज़ टर्नअराउंड। हम समय-सीमा समझते हैं और हर ऑर्डर पर खरे उतरते हैं।" data-mr="महत्त्वाच्या रबर भागांवर झटपट टर्नअराउंड. आम्ही मुदती समजतो आणि प्रत्येक ऑर्डरवर त्या पूर्ण करतो.">Quick turnaround times on critical rubber parts. We understand deadlines and we deliver on them, order after order.</p></div>
-      <div class="b-card b-2 rv" data-d="1"><div class="b-num">02</div><h4 data-en="Custom compound development" data-hi="कस्टम कंपाउंड डेवलपमेंट" data-mr="कस्टम कंपाउंड डेव्हलपमेंट">Custom compound development</h4><p data-en="We develop rubber compounds tailored to your exact temperature, chemical and pressure requirements." data-hi="हम आपकी सटीक तापमान, रासायनिक और दबाव आवश्यकताओं के अनुसार रबर कंपाउंड विकसित करते हैं।" data-mr="आम्ही तुमच्या अचूक तापमान, रासायनिक आणि दाब आवश्यकतांनुसार रबर कंपाउंड विकसित करतो.">We develop rubber compounds tailored to your exact temperature, chemical and pressure requirements.</p></div>
-      <div class="b-card b-3 rv" data-d="2"><div class="b-num">03</div><h4 data-en="Small MOQ accepted" data-hi="छोटा MOQ स्वीकार" data-mr="लहान MOQ स्वीकार">Small MOQ accepted</h4><p data-en="Perfect for startups, testing and trial orders — start small and scale up with confidence." data-hi="स्टार्टअप, परीक्षण और ट्रायल ऑर्डर के लिए बिल्कुल सही — छोटे से शुरू करें और आत्मविश्वास से बढ़ाएं।" data-mr="स्टार्टअप, चाचणी आणि ट्रायल ऑर्डरसाठी योग्य — लहान सुरुवात करा आणि आत्मविश्वासाने वाढवा.">Perfect for startups, testing and trial orders — start small and scale up with confidence.</p></div>
-      <div class="b-card b-4 rv" data-d="3"><div class="b-num">04</div><h4 data-en="Bulk production capacity" data-hi="थोक उत्पादन क्षमता" data-mr="मोठ्या प्रमाणात उत्पादन क्षमता">Bulk production capacity</h4><p data-en="Large-volume manufacturing capability to meet your ongoing, high-quantity requirements." data-hi="आपकी निरंतर, उच्च-मात्रा आवश्यकताओं को पूरा करने के लिए बड़े पैमाने पर निर्माण क्षमता।" data-mr="तुमच्या सतत, उच्च-प्रमाण आवश्यकता पूर्ण करण्यासाठी मोठ्या प्रमाणात उत्पादन क्षमता.">Large-volume manufacturing capability to meet your ongoing, high-quantity requirements.</p></div>
-      <div class="b-card b-5 rv" data-d="4"><div class="b-num">05</div><h4 data-en="Competitive pricing" data-hi="प्रतिस्पर्धी मूल्य" data-mr="स्पर्धात्मक किंमत">Competitive pricing</h4><p data-en="Best-in-market rates without compromising on material quality or dimensional accuracy." data-hi="सामग्री गुणवत्ता या आयामी सटीकता से समझौता किए बिना बाजार में सर्वोत्तम दर।" data-mr="सामग्री गुणवत्ता किंवा मितीय अचूकतेशी तडजोड न करता बाजारातील सर्वोत्तम दर.">Best-in-market rates without compromising on material quality or dimensional accuracy.</p></div>
-      <div class="b-card b-6 rv" data-d="5"><div class="b-num">06 / Always Available</div><h4 data-en="We're open 24 × 7 for your enquiries." data-hi="आपकी पूछताछ के लिए हम 24 × 7 खुले हैं।" data-mr="तुमच्या चौकशीसाठी आम्ही 24 × 7 उघडे आहोत.">We're open 24 × 7 for your enquiries.</h4><p data-en="Call, WhatsApp or email us anytime — our team is ready to help you with urgent requirements, quotes and technical questions." data-hi="कभी भी कॉल, व्हाट्सएप या ईमेल करें — हमारी टीम तत्काल आवश्यकताओं, कोटेशन और तकनीकी प्रश्नों में मदद के लिए तैयार है।" data-mr="कधीही कॉल, व्हॉट्सअ‍ॅप किंवा ईमेल करा — आमची टीम तातडीच्या गरजा, कोट आणि तांत्रिक प्रश्नांमध्ये मदत करण्यास तयार आहे.">Call, WhatsApp or email us anytime — our team is ready to help you with urgent requirements, quotes and technical questions.</p><div class="b-cta"><a href="tel:+918149002309" class="btn btn-primary">📞 8149002309</a></div></div>
+      <div class="b-card b-1 rv"><div class="b-num">01 / USP</div><h4>Fast delivery — because your production can't wait.</h4><p>Quick turnaround times on critical rubber parts. We understand deadlines and we deliver on them, order after order.</p></div>
+      <div class="b-card b-2 rv" data-d="1"><div class="b-num">02</div><h4>Custom compound development</h4><p>We develop rubber compounds tailored to your exact temperature, chemical and pressure requirements.</p></div>
+      <div class="b-card b-3 rv" data-d="2"><div class="b-num">03</div><h4>Small MOQ accepted</h4><p>Perfect for startups, testing and trial orders — start small and scale up with confidence.</p></div>
+      <div class="b-card b-4 rv" data-d="3"><div class="b-num">04</div><h4>Bulk production capacity</h4><p>Large-volume manufacturing capability to meet your ongoing, high-quantity requirements.</p></div>
+      <div class="b-card b-5 rv" data-d="4"><div class="b-num">05</div><h4>Competitive pricing</h4><p>Best-in-market rates without compromising on material quality or dimensional accuracy.</p></div>
+      <div class="b-card b-6 rv" data-d="5"><div class="b-num">06 / Always Available</div><h4>We're open 24 × 7 for your enquiries.</h4><p>Call, WhatsApp or email us anytime — our team is ready to help you with urgent requirements, quotes and technical questions.</p><div class="b-cta"><a href="tel:+918149002309" class="btn btn-primary">📞 Call 8149002309</a></div></div>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="sec" id="contact">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="tag" style="justify-content:center" data-en="Get In Touch" data-hi="संपर्क करें" data-mr="संपर्क साधा">Get In Touch</span>
-      <h2 data-en="Request a quote or send your drawing" data-hi="कोटेशन मांगें या ड्रॉइंग भेजें" data-mr="कोट विनंती करा किंवा ड्रॉइंग पाठवा">Request a quote or send your drawing</h2>
-      <p data-en="Share your requirement and we'll get back to you quickly with pricing and lead time." data-hi="अपनी आवश्यकता साझा करें और हम मूल्य निर्धारण और लीड समय के साथ जल्दी संपर्क करेंगे।" data-mr="तुमची आवश्यकता सांगा आणि आम्ही किंमत आणि लीड टाइमसह लवकर संपर्क करू.">Share your requirement and we'll get back to you quickly with pricing and lead time.</p>
+      <span class="tag" style="justify-content:center">Get In Touch</span>
+      <h2>Request a quote or <em>send your drawing</em></h2>
+      <p>Share your requirement and we'll get back to you quickly with pricing and lead time.</p>
     </div>
     <div class="contact-grid">
       <div class="info-panel rv">
-        <h3 data-en="Contact Information" data-hi="संपर्क जानकारी" data-mr="संपर्क माहिती">Contact Information</h3>
-        <p data-en="We're available 24×7 for your enquiries." data-hi="आपकी पूछताछ के लिए हम 24×7 उपलब्ध हैं।" data-mr="तुमच्या चौकशीसाठी आम्ही 24×7 उपलब्ध आहोत.">We're available 24×7 for your enquiries.</p>
-
-        <div class="info-item">
-          <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <div>
-            <div class="k" data-en="Mobile" data-hi="मोबाइल" data-mr="मोबाईल">Mobile</div>
-            <div class="v"><a href="tel:+918149002309">8149002309</a></div>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <div>
-            <div class="k" data-en="Office" data-hi="कार्यालय" data-mr="कार्यालय">Office</div>
-            <div class="v"><a href="tel:+917219218183">7219218183</a></div>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
-          <div>
-            <div class="k">WhatsApp</div>
-            <div class="v"><a href="https://wa.me/918149002309" target="_blank" rel="noopener">8149002309</a></div>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div>
-            <div class="k" data-en="Email" data-hi="ईमेल" data-mr="ईमेल">Email</div>
-            <div class="v"><a href="mailto:nikitahydraulic5@gmail.com">nikitahydraulic5@gmail.com</a></div>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div>
-            <div class="k" data-en="Address" data-hi="पता" data-mr="पत्ता">Address</div>
-            <div class="v">Bhosari MIDC,<br>Pune, Maharashtra, India</div>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div>
-            <div class="k" data-en="Working Hours" data-hi="कार्य समय" data-mr="कामाचे तास">Working Hours</div>
-            <div class="v" data-en="24 × 7 — Always Open" data-hi="24 × 7 — हमेशा खुला" data-mr="24 × 7 — नेहमी उघडे">24 × 7 — Always Open</div>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
-          <div>
-            <div class="k" data-en="GST Number" data-hi="GST नंबर" data-mr="GST क्रमांक">GST Number</div>
-            <div class="v" style="font-family:var(--f-mono);font-size:13px">27BQYPP6822Q1ZJ</div>
-          </div>
-        </div>
-
+        <h3>Contact Information</h3>
+        <p>We're available 24×7 for your enquiries.</p>
+        <div class="info-item"><div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="k">Phone</div><div class="v"><a href="tel:+918149002309">8149002309</a> · <a href="tel:+917219218183">7219218183</a></div></div></div>
+        <div class="info-item"><div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><div><div class="k">WhatsApp</div><div class="v"><a href="https://wa.me/918149002309" target="_blank" rel="noopener">8149002309</a></div></div></div>
+        <div class="info-item"><div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="k">Email</div><div class="v"><a href="mailto:nikitahydraulic5@gmail.com">nikitahydraulic5@gmail.com</a></div></div></div>
+        <div class="info-item"><div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="k">Address</div><div class="v">Bhosari MIDC,<br>Pune, Maharashtra, India</div></div></div>
+        <div class="info-item"><div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="k">Working Hours</div><div class="v">24 × 7 — Always Open</div></div></div>
+        <div class="info-item"><div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div><div><div class="k">GST Number</div><div class="v" style="font-family:var(--f-mono);font-size:13px">27BQYPP6822Q1ZJ</div></div></div>
         <a href="https://wa.me/918149002309?text=Hello%20Nikita%20Hydraulic%2C%20I%20would%20like%20to%20enquire." target="_blank" rel="noopener" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.1-.3.2-.5.1-.2 0-.3 0-.5s-.6-1.5-.9-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 .9-1 2.3 0 1.3.9 2.6 1 2.8.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
-          <span data-en="Chat on WhatsApp" data-hi="व्हाट्सएप पर चैट करें" data-mr="व्हॉट्सअ‍ॅपवर चॅट करा">Chat on WhatsApp</span>
+          Chat on WhatsApp
         </a>
       </div>
       <div class="form-panel rv" data-d="1">
-        <h3 data-en="Send Us Your Requirement" data-hi="अपनी आवश्यकता भेजें" data-mr="तुमची आवश्यकता पाठवा">Send Us Your Requirement</h3>
-        <p data-en="Fill the form and it will open WhatsApp with your details." data-hi="फॉर्म भरें और यह आपके विवरण के साथ WhatsApp खोलेगा।" data-mr="फॉर्म भरा आणि ते तुमच्या तपशीलांसह WhatsApp उघडेल.">Fill the form and it will open WhatsApp with your details.</p>
+        <h3>Send Us Your Requirement</h3>
+        <p>Fill the form and it will open WhatsApp with your details.</p>
         <form id="enquiry">
           <div class="f-row">
-            <div class="f-g"><label for="f-name"><span data-en="Your Name" data-hi="आपका नाम" data-mr="तुमचे नाव">Your Name</span> <span>*</span></label><input type="text" id="f-name" required data-ph-en="Full name" data-ph-hi="पूरा नाम" data-ph-mr="पूर्ण नाव" placeholder="Full name" /></div>
-            <div class="f-g"><label for="f-phone"><span data-en
+            <div class="f-g"><label for="f-name">Your Name <span>*</span></label><input type="text" id="f-name" required placeholder="Full name" /></div>
+            <div class="f-g"><label for="f-phone">Phone Number <span>*</span></label><input type="tel" id="f-phone" required placeholder="10-digit mobile" /></div>
+          </div>
+          <div class="f-g"><label for="f-company">Company Name</label><input type="text" id="f-company" placeholder="Your company (optional)" /></div>
+          <div class="f-g"><label for="f-product">Product Required <span>*</span></label>
+            <select id="f-product" required>
+              <option value="">Select a product</option>
+              <option>O-Ring</option><option>Gasket</option><option>Oil Seal</option>
+              <option>Rubber Washer</option><option>Rubber Grommet</option>
+              <option>Custom Rubber Part</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="f-g"><label for="f-message">Requirement Details</label><textarea id="f-message" placeholder="Size, quantity, material, drawing reference, target price..."></textarea></div>
+          <button type="submit" class="btn btn-primary">Send Enquiry on WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+        </form>
+      </div>
+    </div>
+    <div class="map-wrap rv">
+      <iframe src="https://www.google.com/maps?q=Bhosari%20MIDC%2C%20Pune%2C%20Maharashtra&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="wrap">
+    <div><h3>Need rubber parts urgently?</h3><p>Call or WhatsApp us — we're available 24×7.</p></div>
+    <a href="tel:+918149002309" class="btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call 8149002309
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><div class="brand-mark"><img src="logo.png" alt="Nikita Hydraulic" /></div><div><b>Nikita Hydraulic</b><span>Since 2010</span></div></div>
+        <p>Manufacturer of O-rings, gaskets, oil seals, rubber washers, grommets &amp; custom rubber parts — from Bhosari MIDC, Pune.</p>
+      </div>
+      <div><h5>Quick Links</h5><ul><li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#products">Products</a></li><li><a href="#materials">Materials</a></li><li><a href="#why">Why Us</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h5>Products</h5><ul><li><a href="#products">O-Rings</a></li><li><a href="#products">Oil Seals</a></li><li><a href="#products">Gaskets</a></li><li><a href="#products">Rubber Washers</a></li><li><a href="#products">Rubber Grommets</a></li><li><a href="#products">Custom Parts</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li>📍 Bhosari MIDC, Pune, Maharashtra</li><li>📞 <a href="tel:+918149002309">8149002309</a></li><li>📞 <a href="tel:+917219218183">7219218183</a></li><li>💬 <a href="https://wa.me/918149002309" target="_blank" rel="noopener">WhatsApp</a></li><li>✉️ <a href="mailto:nikitahydraulic5@gmail.com">nikitahydraulic5@gmail.com</a></li><li>🕐 24 × 7 Open</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Nikita Hydraulic. All rights reserved.</span>
+      <span class="gst-badge">GST: 27BQYPP6822Q1ZJ</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/918149002309?text=Hello%20Nikita%20Hydraulic%2C%20I%20want%20to%20enquire%20about%20rubber%20parts." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.7L.3 31.7l8.2-2.1c2.2 1.2 4.8 1.9 7.5 1.9 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.3c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-4.9 1.3 1.3-4.7-.3-.5c-1.3-2-1.9-4.3-1.9-6.7C2.9 8.8 8.8 2.9 16 2.9S29.1 8.8 29.1 16 23.2 28.7 16 28.7zm7.2-9.6c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.3-.8.1s-1.7-.6-3.2-2c-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.8 5.1.8.4 1.4.6 1.9.8.8.3 1.5.2 2.1.1.6-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.4z"/></svg>
+</a>
+
+<script>
+window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('done'), 500); });
+
+const nav = document.getElementById('nav');
+const burger = document.getElementById('burger');
+const drawer = document.getElementById('drawer');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('on');
+  drawer.classList.toggle('open');
+  document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+});
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  burger.classList.remove('on'); drawer.classList.remove('open'); document.body.style.overflow = '';
+}));
+
+const revealIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.rv').forEach(el => revealIO.observe(el));
+
+const counters = document.querySelectorAll('[data-count]');
+const counterIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target, target = +el.dataset.count, duration = 1400, start = performance.now();
+      const tick = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.childNodes[0].nodeValue = Math.floor(ease * target);
+        if (p < 1) requestAnimationFrame(tick); else el.childNodes[0].nodeValue = target;
+      };
+      requestAnimationFrame(tick);
+      counterIO.unobserve(el);
+    }
+  });
+}, { threshold: 0.4 });
+counters.forEach(el => counterIO.observe(el));
+
+const filterBtns = document.querySelectorAll('.filter-btn');
+const products = document.querySelectorAll('#productGrid .product');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    let i = 0;
+    products.forEach(p => {
+      const show = filter === 'all' || p.dataset.cat === filter;
+      if (show) {
+        p.style.display = '';
+        p.classList.remove('pop'); void p.offsetWidth;
+        p.style.animationDelay = (i * 45) + 'ms';
+        p.classList.add('pop'); i++;
+      } else p.style.display = 'none';
+    });
+  });
+});
+
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbCap = document.getElementById('lbCap');
+let lbIndex = 0;
+const photos = [...document.querySelectorAll('.p-media:not(.no-photo)')];
+function openLB(idx) {
+  lbIndex = idx;
+  const el = photos[idx];
+  const img = el.querySelector('img');
+  if (!img) return;
+  lbImg.src = img.src;
+  lbImg.alt = img.alt;
+  lbCap.textContent = el.dataset.title || '';
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLB() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+function navLB(d) { lbIndex = (lbIndex + d + photos.length) % photos.length; openLB(lbIndex); }
+document.querySelectorAll('.p-media').forEach((el) => {
+  el.addEventListener('click', () => {
+    if (el.classList.contains('no-photo')) return;
+    const idx = photos.indexOf(el);
+    if (idx > -1) openLB(idx);
+  });
+});
+document.getElementById('lbClose').addEventListener('click', closeLB);
+lb.addEventListener('click', (e) => { if (e.target === lb) closeLB(); });
+document.getElementById('lbPrev').addEventListener('click', (e) => { e.stopPropagation(); navLB(-1); });
+document.getElementById('lbNext').addEventListener('click', (e) => { e.stopPropagation(); navLB(1); });
+document.addEventListener('keydown', (e) => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLB();
+  if (e.key === 'ArrowLeft') navLB(-1);
+  if (e.key === 'ArrowRight') navLB(1);
+});
+
+const WA = '918149002309';
+document.getElementById('enquiry').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  let msg = `*New Enquiry — Nikita Hydraulic*%0A%0A`;
+  msg += `*Name:* ${encodeURIComponent(v('f-name'))}%0A`;
+  msg += `*Phone:* ${encodeURIComponent(v('f-phone'))}%0A`;
+  if (v('f-company')) msg += `*Company:* ${encodeURIComponent(v('f-company'))}%0A`;
+  msg += `*Product:* ${encodeURIComponent(v('f-product'))}%0A`;
+  if (v('f-message')) msg += `*Details:* ${encodeURIComponent(v('f-message'))}%0A`;
+  window.open(`https://wa.me/${WA}?text=${msg}`, '_blank');
+});
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (!t) return;
+    e.preventDefault();
+    const offset = window.innerWidth < 768 ? 70 : 80;
+    window.scrollTo({ top: t.offsetTop - offset, behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
